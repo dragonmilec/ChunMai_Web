@@ -42,7 +42,7 @@ const Portfolio = () => {
             category: 'web',
             image: 'images/t05.png',
             description: '提供全方位的口腔資料管理及分析功能，幫助您更有效率地跟蹤病人的口腔健康狀況。',
-            coreFeatures: ['React Native', 'Firebase', 'Redux', 'Chart.js'],
+            coreFeatures: ['AI 口腔資料分析與建議', '互動式吞嚥賦能訓練模組', '行動端進度追蹤與報表生成', '雲端資料同步與安全管理'],
             demoUrl: '#',
             githubUrl: '#'
         },
@@ -52,7 +52,7 @@ const Portfolio = () => {
             category: 'mobile',
             image: 'images/za8.jpg',
             description: '適用語言遲緩、自閉症',
-            coreFeatures: ['Unity'],
+            coreFeatures: ['語音辨識與語言互動分析', '即時互動回饋系統', '多媒體課程整合與學習成效追蹤', 'AI 助教或智能提示功能'],
             demoUrl: '#',
             githubUrl: '#'
         }
@@ -63,7 +63,7 @@ const Portfolio = () => {
             category: 'mobile',
             image: 'images/z08.png',
             description: '這款 APP 透過 舌頭體感互動遊戲，幫助使用者提升舌頭靈活度與吞嚥能力，並提供 即時回饋與進度追蹤',
-            coreFeatures: ['Angular', 'Django', 'PostgreSQL', 'WebSocket'],
+            coreFeatures: ['影像辨識與舌頭動作分析', '壓力感測健舌器互動', '動作評分與即時文字回饋', '後台數據分析與統計追蹤', 'WebSocket 實時資料同步'],
             demoUrl: '#',
             githubUrl: '#'
         },
@@ -73,7 +73,7 @@ const Portfolio = () => {
             category: 'iot',
             image: 'images/z07.png',
             description: '超音速霧化直達真皮層，雲端精準控制與QRCODE授權啟用的物聯網藥劑注射平台。',
-            coreFeatures: ['Flutter', 'Node.js', 'Socket.io', 'MongoDB'],
+            coreFeatures: ['超音速霧化技術（200nm 微粒）', '雲端控制噴射參數與藥劑管理', '藍牙連線與 IoT 裝置互動', 'QR Code 授權啟用與單瓶追蹤', '自動資料上傳與使用狀況分析'],
             demoUrl: '#',
             githubUrl: '#'
         },

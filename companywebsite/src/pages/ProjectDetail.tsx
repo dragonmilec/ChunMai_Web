@@ -2,68 +2,12 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft, ExternalLink, Github, Calendar, Users, Code, Zap, Target, Brain, BarChart3, Globe2, Shield, TrendingUp, Award, Mic, BookOpen, Gamepad2, MessageCircleDashed as MessageCircle, Eye, Clock, RefreshCw, Camera, Database, Search, Settings, Lock, UserCheck } from 'lucide-react'
+import { ArrowLeft, ExternalLink, Github, Calendar, Users, Binoculars, Code, Zap, Target, Brain, BarChart3, Globe2, Shield, TrendingUp, Award, Mic, BookOpen, Gamepad2, MessageCircleDashed as MessageCircle, Eye, Clock, RefreshCw, Camera, Database, Search, Settings, Lock, UserCheck } from 'lucide-react'
 
 const ProjectDetail = () => {
     const { id } = useParams()
 
     const projects = [
-        //{
-        //    id: 1,
-        //    title: 'E-Commerce 購物平台',
-        //    category: 'web',
-        //    images: [
-        //        'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        //        'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        //        'https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=1200'
-        //    ],
-        //    description: '完整的電商解決方案，包含商品管理、訂單處理、金流整合等功能',
-        //    fullDescription: '這是一個功能完整的電子商務平台，為中小企業提供完整的線上銷售解決方案。系統包含前台購物網站、後台管理系統，以及完整的訂單處理流程。採用現代化的微服務架構，確保系統的可擴展性和穩定性。',
-        //    coreFeatures: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-        //    features: [
-        //        '響應式購物網站設計',
-        //        '商品分類與搜尋功能',
-        //        '購物車與結帳流程',
-        //        'Stripe 金流整合',
-        //        '訂單管理系統',
-        //        '庫存管理',
-        //        '會員系統',
-        //        '優惠券功能'
-        //    ],
-        //    duration: '3 個月',
-        //    teamSize: '4 人',
-        //    demoUrl: '#',
-        //    githubUrl: '#',
-        //    year: '2023'
-        //},
-        //{
-        //    id: 2,
-        //    title: '企業資源管理系統',
-        //    category: 'system',
-        //    images: [
-        //        'https://images.pexels.com/photos/590016/pexels-photo-590016.jpg?auto=compress&cs=tinysrgb&w=1200',
-        //        'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        //        'https://images.pexels.com/photos/590020/pexels-photo-590020.jpg?auto=compress&cs=tinysrgb&w=1200'
-        //    ],
-        //    description: '整合人資、財務、庫存管理的企業級系統',
-        //    fullDescription: '為大型企業打造的綜合性資源管理平台，整合了人力資源管理、財務會計、庫存控制等核心業務模組。系統採用模組化設計，支援客製化配置，能夠適應不同規模企業的需求。',
-        //    coreFeatures: ['Vue.js', 'Spring Boot', 'PostgreSQL', 'Redis'],
-        //    features: [
-        //        '人力資源管理',
-        //        '薪資計算系統',
-        //        '財務報表生成',
-        //        '庫存即時監控',
-        //        '採購管理流程',
-        //        '權限角色管理',
-        //        '數據分析儀表板',
-        //        'API 整合介面'
-        //    ],
-        //    duration: '6 個月',
-        //    teamSize: '8 人',
-        //    demoUrl: '#',
-        //    githubUrl: '#',
-        //    year: '2023'
-        //},
         {
             id: 1,
             title: '智慧口腔暨吞嚥賦能照護雲管家',
@@ -75,7 +19,7 @@ const ProjectDetail = () => {
             ],
             description: '個人化健身計畫與進度追蹤的行動應用',
             fullDescription: '提供全方位的口腔資料管理及分析功能，幫助您更有效率地跟蹤病人的口腔健康狀況。',
-            coreFeatures: ['React Native', 'Firebase', 'Redux', 'Chart.js'],
+            coreFeatures: ['AI 口腔資料分析與建議', '互動式吞嚥賦能訓練模組', '行動端進度追蹤與報表生成', '雲端資料同步與安全管理'],
             features: [
                 '個人化訓練計畫',
                 '運動數據記錄',
@@ -86,11 +30,11 @@ const ProjectDetail = () => {
                 '健身影片庫',
                 '智能提醒通知'
             ],
-            duration: '4 個月',
-            teamSize: '3 人',
+            duration: ' - ',
+            coreFunc: '病人健康數據管理與分析',
             demoUrl: '#',
             githubUrl: '#',
-            year: '2024',
+            sceneAlert: '牙科診所、醫療中心、護理機構',
             isOralHealthApp: true
         },
         {
@@ -104,7 +48,7 @@ const ProjectDetail = () => {
             ],
             description: '適用語言遲緩、自閉症',
             fullDescription: '現代化的線上教育平台，為教育機構和個人講師提供完整的教學解決方案。平台支援多媒體課程內容、即時互動功能，以及完善的學習成效評估系統。',
-            coreFeatures: ['Unity'],
+            coreFeatures: ['語音辨識與語言互動分析','即時互動回饋系統','多媒體課程整合與學習成效追蹤','AI 助教或智能提示功能'],
             features: [
                 '影片課程播放',
                 '互動式測驗系統',
@@ -115,11 +59,11 @@ const ProjectDetail = () => {
                 '多語言支援',
                 '行動裝置適配'
             ],
-            duration: '進行中',
-            teamSize: '6 人',
+            duration: ' - ',
+            coreFunc: '語言互動與口語能力訓練',
             demoUrl: '#',
             githubUrl: '#',
-            year: '進行中',
+            sceneAlert: '教育機構與專業治療師的線上輔助課程',
             isLanguageTherapy: true // 標記這是語言治療平台
         }
         ,
@@ -134,7 +78,7 @@ const ProjectDetail = () => {
             ],
             description: '這款 APP 透過 舌頭體感互動遊戲，幫助使用者提升舌頭靈活度與吞嚥能力，並提供 即時回饋與進度追蹤',
             fullDescription: '這款 APP 結合 影像辨識與健舌器互動遊戲，透過趣味體感訓練幫助使用者提升舌頭靈活度與吞嚥能力。提供 即時回饋、分數評估與進度追蹤，讓訓練安全、有趣，並可透過數據分析了解成效。',
-            coreFeatures: ['Angular', 'Django', 'PostgreSQL', 'WebSocket'],
+            coreFeatures: ['影像辨識與舌頭動作分析','壓力感測健舌器互動','動作評分與即時文字回饋','後台數據分析與統計追蹤','WebSocket 實時資料同步'],
             features: [
                 '舌頭體操互動遊戲（影像辨識）',
                 '健舌器互動遊戲（壓力感測）',
@@ -145,11 +89,11 @@ const ProjectDetail = () => {
                 '腳本與遊戲風格管理',
                 '設備串接與數據輸出'
             ],
-            duration: '4 個月',
-            teamSize: '5 人',
+            duration: ' - ',
+            coreFunc: '前台進度追蹤與統計',
             demoUrl: '#',
             githubUrl: '#',
-            year: '2024',
+            sceneAlert: '家庭、復健中心或語言治療機構使用者',
             isTongueTrainerGame: true
         },
         {
@@ -163,7 +107,7 @@ const ProjectDetail = () => {
             ],
             description: '超音速霧化直達真皮層，雲端精準控制與QRCODE授權啟用的物聯網藥劑注射平台。',
             fullDescription: '採用超音速霧化技術，將藥劑平均霧化至200nm微粒，無針直達真皮層，吸收更快、更安全。每瓶藥劑具備專屬雲端參數，可自動下載最佳噴射設定，精準控制噴氣時間與流速。裝置透過藍牙連線與雲端管理，使用者掃描一次性 QRCODE後啟用，每瓶預設可使用 200 次。           所有施打紀錄自動上傳伺服器，方便追蹤與分析使用狀況。',
-            coreFeatures: ['Flutter', 'Node.js', 'Socket.io', 'MongoDB'],
+            coreFeatures: ['超音速霧化技術（200nm 微粒）', '雲端控制噴射參數與藥劑管理', '藍牙連線與 IoT 裝置互動', 'QR Code 授權啟用與單瓶追蹤', '自動資料上傳與使用狀況分析'],
             features: [
                 '即時聊天功能',
                 '動態發布與分享',
@@ -174,41 +118,13 @@ const ProjectDetail = () => {
                 '通知推送系統',
                 '多平台同步'
             ],
-            duration: '6 個月',
-            teamSize: '7 人',
+            duration: ' - ',
+            coreFunc: '無針直達真皮層藥劑注射',
             demoUrl: '#',
             githubUrl: '#',
-            year: '2024',
+            sceneAlert: '醫美診所、皮膚科與美容中心',
             isIoTJetInject: true
         },
-    //    {
-    //        id: 5,
-    //        title: '企業資源管理系統',
-    //        category: 'system',
-    //        images: [
-    //            'https://images.pexels.com/photos/590016/pexels-photo-590016.jpg?auto=compress&cs=tinysrgb&w=1200',
-    //            'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    //            'https://images.pexels.com/photos/590020/pexels-photo-590020.jpg?auto=compress&cs=tinysrgb&w=1200'
-    //        ],
-    //        description: '整合人資、財務、庫存管理的企業級系統',
-    //        fullDescription: '為大型企業打造的綜合性資源管理平台，整合了人力資源管理、財務會計、庫存控制等核心業務模組。系統採用模組化設計，支援客製化配置，能夠適應不同規模企業的需求。',
-    //        coreFeatures: ['Vue.js', 'Spring Boot', 'PostgreSQL', 'Redis'],
-    //        features: [
-    //            '人力資源管理',
-    //            '薪資計算系統',
-    //            '財務報表生成',
-    //            '庫存即時監控',
-    //            '採購管理流程',
-    //            '權限角色管理',
-    //            '數據分析儀表板',
-    //            'API 整合介面'
-    //        ],
-    //        duration: '6 個月',
-    //        teamSize: '8 人',
-    //        demoUrl: '#',
-    //        githubUrl: '#',
-    //        year: '2023'
-    //    }
     ]
 
     const project = projects.find(p => p.id === parseInt(id || ''))
@@ -448,7 +364,7 @@ const ProjectDetail = () => {
                             className="text-center"
                         >
                             <img
-                                src={`${import.meta.env.BASE_URL}images/t03.png`}                                alt="醫療決策支援"
+                                src={`${import.meta.env.BASE_URL}images/t03.png`} alt="醫療決策支援"
                                 className="w-full h-48 object-cover rounded-xl mb-6"
                             />
                             <div className="bg-slate-800/50 rounded-2xl p-6">
@@ -781,7 +697,7 @@ const ProjectDetail = () => {
                                     <h3 className="text-xl font-semibold text-white">霧化技術</h3>
                                 </div>
                                 <p className="text-gray-300 leading-relaxed">
-                                     採用超音速氣流技術，將藥劑平均霧化至200 nm級微粒。
+                                    採用超音速氣流技術，將藥劑平均霧化至200 nm級微粒。
                                 </p>
                             </motion.div>
 
@@ -947,7 +863,7 @@ const ProjectDetail = () => {
                                 alt="智慧雲端校正介面"
                                 className="w-full h-64 object-cover rounded-2xl"
                             />
-                           
+
                         </motion.div>
 
                         <motion.div
@@ -1370,7 +1286,7 @@ const ProjectDetail = () => {
                         {/* 左側圖片 */}
                         <div>
                             <img
-                                src={`${import.meta.env.BASE_URL}images/c03.png`}                                alt="沉浸式互動世界"
+                                src={`${import.meta.env.BASE_URL}images/c03.png`} alt="沉浸式互動世界"
                                 className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                             />
                         </div>
@@ -1906,23 +1822,23 @@ const ProjectDetail = () => {
                             <div className="space-y-6">
                                 <div className="flex items-center space-x-3">
                                     <Calendar className="h-5 w-5 text-blue-400" />
-                                    <span className="text-gray-300">開發時間：{project.duration}</span>
+                                    <span className="text-gray-300">上市時間：{project.duration}</span>
                                 </div>
 
                                 <div className="flex items-center space-x-3">
-                                    <Users className="h-5 w-5 text-blue-400" />
-                                    <span className="text-gray-300">團隊規模：{project.teamSize}</span>
+                                    <Binoculars className="h-5 w-5 text-blue-400" />
+                                    <span className="text-gray-300">核心功能：{project.coreFunc}</span>
                                 </div>
 
                                 <div className="flex items-center space-x-3">
                                     <Code className="h-5 w-5 text-blue-400" />
-                                    <span className="text-gray-300">完成年份：{project.year}</span>
+                                    <span className="text-gray-300">適用場景：{project.sceneAlert}</span>
                                 </div>
 
                                 <div>
                                     <h3 className="text-lg font-semibold text-white mb-3 flex items-center space-x-2">
                                         <Zap className="h-5 w-5 text-blue-400" />
-                                        <span>技術棧</span>
+                                        <span>智能技術</span>
                                     </h3>
                                     <div className="flex flex-wrap gap-2">
                                         {project.coreFeatures.map((coreFeatures, index) => (
@@ -1961,58 +1877,58 @@ const ProjectDetail = () => {
             {/* 根據專案類型顯示不同內容 */}
             {project.isOralHealthApp ?
                 (<OralHealthAppDetails />)
-                
+
                 : project.isLanguageTherapy ?
                     (<LanguageTherapyDetails />)
-                
+
                     : project.isTongueTrainerGame ?
                         (<TongueTrainerGameDetails />)
 
                         : project.isIoTJetInject ?
                             (<IoTJetInjectDetails />)
-                        
-                 : (
-                <>
-                    {/* Project Description */}
-                    <section className="py-12 bg-slate-800/30">
-                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8 }}
-                                viewport={{ once: true }}
-                                className="grid grid-cols-1 lg:grid-cols-2 gap-12"
-                            >
-                                <div>
-                                    <h2 className="text-3xl font-bold text-white mb-6">專案概述</h2>
-                                    <p className="text-gray-300 leading-relaxed text-lg">
-                                        {project.fullDescription}
-                                    </p>
-                                </div>
 
-                                <div>
-                                    <h2 className="text-3xl font-bold text-white mb-6">主要功能</h2>
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                        {project.features.map((feature, index) => (
+                            : (
+                                <>
+                                    {/* Project Description */}
+                                    <section className="py-12 bg-slate-800/30">
+                                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                                             <motion.div
-                                                key={index}
-                                                initial={{ opacity: 0, x: 20 }}
-                                                whileInView={{ opacity: 1, x: 0 }}
-                                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                                initial={{ opacity: 0, y: 30 }}
+                                                whileInView={{ opacity: 1, y: 0 }}
+                                                transition={{ duration: 0.8 }}
                                                 viewport={{ once: true }}
-                                                className="flex items-center space-x-3 p-3 bg-slate-800/50 rounded-xl"
+                                                className="grid grid-cols-1 lg:grid-cols-2 gap-12"
                                             >
-                                                <div className="w-2 h-2 bg-blue-400 rounded-full flex-shrink-0" />
-                                                <span className="text-gray-300">{feature}</span>
+                                                <div>
+                                                    <h2 className="text-3xl font-bold text-white mb-6">專案概述</h2>
+                                                    <p className="text-gray-300 leading-relaxed text-lg">
+                                                        {project.fullDescription}
+                                                    </p>
+                                                </div>
+
+                                                <div>
+                                                    <h2 className="text-3xl font-bold text-white mb-6">主要功能</h2>
+                                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                                        {project.features.map((feature, index) => (
+                                                            <motion.div
+                                                                key={index}
+                                                                initial={{ opacity: 0, x: 20 }}
+                                                                whileInView={{ opacity: 1, x: 0 }}
+                                                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                                                viewport={{ once: true }}
+                                                                className="flex items-center space-x-3 p-3 bg-slate-800/50 rounded-xl"
+                                                            >
+                                                                <div className="w-2 h-2 bg-blue-400 rounded-full flex-shrink-0" />
+                                                                <span className="text-gray-300">{feature}</span>
+                                                            </motion.div>
+                                                        ))}
+                                                    </div>
+                                                </div>
                                             </motion.div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </div>
-                    </section>
-                </>
-            )}
+                                        </div>
+                                    </section>
+                                </>
+                            )}
 
             {/* Related Projects */}
             <section className="py-20">
