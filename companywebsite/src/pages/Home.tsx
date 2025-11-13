@@ -133,6 +133,7 @@ const Home = () => {
                             >
                                 <Link
                                     to="/contact"
+                                    onClick={handleRelatedProjectClick}
                                     className="group px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center space-x-2"
                                 >
                                     <span>立即諮詢</span>
@@ -140,6 +141,7 @@ const Home = () => {
                                 </Link>
                                 <Link
                                     to="/portfolio"
+                                    onClick={handleRelatedProjectClick}
                                     className="px-8 py-4 border-2 border-gray-600 hover:border-blue-500 text-white font-semibold rounded-lg transition-all duration-300 hover:bg-blue-500/10 flex items-center justify-center"
                                 >
                                     查看案例
