@@ -81,192 +81,109 @@ const Home = () => {
     return (
         <div className="pt-16">
             {/* Hero Section */}
-            <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-                {/* Background Effects */}
+            <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900/20 to-slate-900">
+                {/* 簡約背景效果 */}
                 <div className="absolute inset-0">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-slate-900"></div>
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent"></div>
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent"></div>
 
-                    {/* 動態粒子背景 */}
-                    {[...Array(20)].map((_, i) => (
-                        <motion.div
-                            key={i}
-                            className="absolute w-2 h-2 bg-blue-400/30 rounded-full"
-                            style={
-                                {
-                                    left: `${Math.random() * 100}%`,
-                                    top: `${Math.random() * 100}%`,
-                                }
-                            }
-                            animate={{
-                                y: [0, -30, 0],
-                                opacity: [0.2, 0.8, 0.2],
-                                scale: [1, 1.5, 1],
-                            }}
-                            transition={{
-                                duration: 3 + Math.random() * 2,
-                                repeat: Infinity,
-                                delay: Math.random() * 2,
-                            }}
-                        />
-                    ))}
-
-                    {/* 光暈效果 */}
-                    <motion.div
-                        className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
-                        animate={{
-                            scale: [1, 1.2, 1],
-                            opacity: [0.3, 0.6, 0.3],
-                        }}
-                        transition={{
-                            duration: 4,
-                            repeat: Infinity,
-                        }}
-                    />
-                    <motion.div
-                        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
-                        animate={{
-                            scale: [1.2, 1, 1.2],
-                            opacity: [0.4, 0.7, 0.4],
-                        }}
-                        transition={{
-                            duration: 5,
-                            repeat: Infinity,
-                        }}
-                    />
-
-                    {/* 浮動產品圖片 */}
-                    <motion.div
-                        className="absolute top-20 right-10 w-64 h-64 rounded-2xl overflow-hidden shadow-2xl hidden lg:block"
-                        style={{ y, opacity }}
-                        initial={{ opacity: 0, x: 100, rotate: -10 }}
-                        animate={{ opacity: 0.8, x: 0, rotate: -5 }}
-                        transition={{ duration: 1, delay: 0.5 }}
-                    >
-                        <img
-                            src={`${import.meta.env.BASE_URL}images/z07.png`}
-                            alt="Product"
-                            className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20"></div>
-                    </motion.div>
-
-                    <motion.div
-                        className="absolute bottom-20 left-10 w-48 h-48 rounded-2xl overflow-hidden shadow-2xl hidden lg:block"
-                        style={{ y, opacity }}
-                        initial={{ opacity: 0, x: -100, rotate: 10 }}
-                        animate={{ opacity: 0.8, x: 0, rotate: 5 }}
-                        transition={{ duration: 1, delay: 0.7 }}
-                    >
-                        <img
-                            src={`${import.meta.env.BASE_URL}images/t04.png`}
-                            alt="Development"
-                            className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20"></div>
-                    </motion.div>
+                    {/* 網格背景 */}
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f12_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f12_1px,transparent_1px)] bg-[size:64px_64px]"></div>
                 </div>
 
-                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="space-y-8"
-                    >
-                        {/* Logo 動畫 */}
-                        <div className="flex justify-center">
+                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        {/* 左側：文字內容 */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
+                            className="space-y-8"
+                        >
+                            {/* 公司標誌 */}
+
+                            <motion.h1
+                                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.3 }}
+                            >
+                                <span className="text-white">打造</span>
+                                <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"> 卓越數位體驗</span>
+                                <br />
+                                <span className="text-white">驅動企業成長</span>
+                            </motion.h1>
+
+                            <motion.p
+                                className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-xl"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.4 }}
+                            >
+                                從網站到企業系統，我們專注於打造實用、可靠的軟體，
+                                幫助您提升業務效能，實現數位轉型目標。
+                            </motion.p>
+
+
                             <motion.div
-                                initial={{ scale: 0 }}
-                                animate={{ scale: 1 }}
-                                transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                                className="relative"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.6 }}
+                                className="flex flex-col sm:flex-row gap-4"
                             >
-                                {/* 主圖片 */}
-                                <div className="w-20 h-20 rounded-2xl overflow-hidden mb-8">
-                                    <img
-                                        src={`${import.meta.env.BASE_URL}icons/square-terminal_w.png`}
-                                        alt="Animated Image"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-
-                                {/* 光暈動畫背景 */}
-                                <div className="absolute -inset-4 bg-gradient-to-r from-blue-400/20 to-purple-500/20 rounded-3xl blur-xl"></div>
-
-                                <motion.div
-                                    className="absolute -inset-4 bg-gradient-to-r from-blue-400/20 to-purple-500/20 rounded-3xl blur-xl"
-                                    animate={{
-                                        scale: [1, 1.2, 1],
-                                        opacity: [0.5, 0.8, 0.5],
-                                    }}
-                                    transition={{
-                                        duration: 2,
-                                        repeat: Infinity,
-                                    }}
-                                />
+                                <Link
+                                    to="/contact"
+                                    className="group px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center space-x-2"
+                                >
+                                    <span>立即諮詢</span>
+                                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                                </Link>
+                                <Link
+                                    to="/portfolio"
+                                    className="px-8 py-4 border-2 border-gray-600 hover:border-blue-500 text-white font-semibold rounded-lg transition-all duration-300 hover:bg-blue-500/10 flex items-center justify-center"
+                                >
+                                    查看案例
+                                </Link>
                             </motion.div>
-                        </div>
-
-                        {/* 標題動畫 */}
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
-
-
-
-
-
-
-
-
-
-
-                                創新軟體
-                            </span>
-                            <br />
-                            <span className="text-white">創造價值</span>
-                        </h1>
-
-                        <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-
-
-
-
-                            從網站到企業系統，我們專注於打造實用、可靠的軟體，
-                            <br className="hidden md:block" />
-                            幫助您提升業務效能，實現數位轉型目標。
-                        </p>
-                        {/* 數據展示 */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 1.1 }}
-                            className="flex flex-wrap justify-center gap-8 text-center"
-                        >
                         </motion.div>
 
+                        {/* 右側：專業產品展示圖片 */}
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.6 }}
-                            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                            initial={{ opacity: 0, x: 50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.3 }}
+                            className="relative hidden lg:block"
                         >
-                            <Link
-                                to="/contact"
-                                className="group px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center space-x-2"
-                                onClick={handleRelatedProjectClick}
-                            >
-                                <span>開始合作</span>
-                                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                            </Link>
-                            <Link
-                                to="/portfolio"
-                                className="px-8 py-4 border border-gray-600 hover:border-gray-400 text-white font-semibold rounded-xl transition-all duration-300 hover:bg-white/5"
-                                onClick={handleRelatedProjectClick}
-                            >
-                                查看產品
-                            </Link>
+                            {/* 主要展示圖 */}
+                            <div className="relative z-10">
+                                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80"
+                                        alt="專業團隊協作"
+                                        className="w-full h-[500px] object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+                                    {/*<div className="absolute bottom-0 left-0 right-0 p-8">*/}
+                                    {/*    <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">*/}
+                                    {/*        <div className="flex items-center space-x-4">*/}
+                                    {/*            <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">*/}
+                                    {/*                <Shield className="h-6 w-6 text-white" />*/}
+                                    {/*            </div>*/}
+                                    {/*            <div>*/}
+                                    {/*                <p className="text-white font-semibold text-lg">企業級安全標準</p>*/}
+                                    {/*                <p className="text-gray-300 text-sm">ISO 27001 認證</p>*/}
+                                    {/*            </div>*/}
+                                    {/*        </div>*/}
+                                    {/*    </div>*/}
+                                    {/*</div>*/}
+                                </div>
+                            </div>
+
+                            {/* 裝飾元素 */}
+                            <div className="absolute -top-6 -right-6 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl"></div>
+                            <div className="absolute -bottom-6 -left-6 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl"></div>
                         </motion.div>
-                    </motion.div>
+                    </div>
                 </div>
 
                 {/* Scroll Indicator */}
@@ -276,8 +193,11 @@ const Home = () => {
                     transition={{ delay: 1 }}
                     className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
                 >
-                    <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-                        <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-bounce"></div>
+                    <div className="flex flex-col items-center space-y-2">
+                        <span className="text-sm text-gray-400">向下滾動</span>
+                        <div className="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center">
+                            <div className="w-1 h-3 bg-blue-500 rounded-full mt-2 animate-bounce"></div>
+                        </div>
                     </div>
                 </motion.div>
             </section>
