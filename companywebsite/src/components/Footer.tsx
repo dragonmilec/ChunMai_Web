@@ -21,14 +21,6 @@ const Footer = () => {
                     {/* Company Info */}
                     <div className="col-span-1 md:col-span-2">
                         <div className="flex items-center space-x-2 mb-4">
-                            <div className="w-8 h-8 relative">
-                                <img
-                                    src={`${import.meta.env.BASE_URL}icons/square-terminal_w.png`}
-                                    alt="純邁 Logo"
-                                    className="w-full h-full object-cover rounded-lg group-hover:opacity-80 transition-opacity"
-                                />
-                            </div>
-
                             <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                                 純邁
                             </span>

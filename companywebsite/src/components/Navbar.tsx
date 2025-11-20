@@ -44,15 +44,6 @@ const Navbar = () => {
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
                     <Link onClick={handleRelatedProjectClickHome} to="/" className="flex items-center space-x-2 group">
-                        <div className="relative w-8 h-8">
-                            {/* Logo 圖片 */}
-                            <img
-                                src={`${import.meta.env.BASE_URL}icons/square-terminal_w.png`}
-                                alt="純邁 Logo"
-                                className="w-full h-full object-cover rounded-lg group-hover:opacity-80 transition-opacity"
-                            />
-                        </div>
-
                         {/* Logo 文字 */}
                         <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                             純邁
