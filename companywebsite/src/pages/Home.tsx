@@ -30,7 +30,7 @@ const Home = () => {
             color: 'from-green-500 to-emerald-500'
         },
         {
-            title: '舌頭訓練體感互動遊戲',
+            title: '吞嚥賦能體感訓練遊戲',
             image: 'images/z08.png',
             description: '高效業務流程',
             color: 'from-purple-500 to-pink-500'

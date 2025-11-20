@@ -69,12 +69,12 @@ const ProjectDetail = () => {
         ,
         {
             id: 3,
-            title: '舌頭訓練體感互動遊戲',
+            title: '吞嚥賦能體感訓練遊戲',
             category: 'mobile',
             images: [
                 'images/z08.png',
-                'images/z08.png',
-                'images/z08.png'
+                'images/o01.png',
+                'images/o03.png'
             ],
             description: '這款 APP 透過 舌頭體感互動遊戲，幫助使用者提升舌頭靈活度與吞嚥能力，並提供 即時回饋與進度追蹤',
             fullDescription: '這款 APP 結合 影像辨識與健舌器互動遊戲，透過趣味體感訓練幫助使用者提升舌頭靈活度與吞嚥能力。提供 即時回饋、分數評估與進度追蹤，讓訓練安全、有趣，並可透過數據分析了解成效。',
@@ -610,48 +610,287 @@ const ProjectDetail = () => {
         </>
     )
 
+    // 舌頭訓練遊戲的詳細內容組件 (吞嚥)
     const TongueTrainerGameDetails = () => (
         <>
-            {/* Project Description */}
-            <section className="py-12 bg-slate-800/30">
+            {/* 產品主視覺 */}
+            <section className="py-16 bg-slate-800/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+                        className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
                     >
                         <div>
-                            <h2 className="text-3xl font-bold text-white mb-6">專案概述</h2>
+                            <div className="flex items-center space-x-3 mb-6">
+                                <Target className="h-8 w-8 text-blue-400" />
+                                <h2 className="text-3xl font-bold text-white">產品介紹</h2>
+                            </div>
                             <p className="text-gray-300 leading-relaxed text-lg">
-                                {project.fullDescription}
+                                這款 APP 透過舌頭體感互動遊戲，幫助使用者提升<span className="text-blue-400 font-semibold">舌頭靈活度與吞嚥能力</span>，並提供即時回饋與進度追蹤。
+                                結合影像辨識與壓力感測健舌器，讓訓練更安全、有趣、有效率。
                             </p>
                         </div>
-
                         <div>
-                            <h2 className="text-3xl font-bold text-white mb-6">主要功能</h2>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                {project.features.map((feature, index) => (
-                                    <motion.div
-                                        key={index}
-                                        initial={{ opacity: 0, x: 20 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                                        viewport={{ once: true }}
-                                        className="flex items-center space-x-3 p-3 bg-slate-800/50 rounded-xl"
-                                    >
-                                        <div className="w-2 h-2 bg-blue-400 rounded-full flex-shrink-0" />
-                                        <span className="text-gray-300">{feature}</span>
-                                    </motion.div>
-                                ))}
-                            </div>
+                            <img
+                                src={`${import.meta.env.BASE_URL}images/o10.png`}
+                                alt="語言治療平台產品定位"
+                                className="w-full h-80 object-cover rounded-2xl"
+                                style={{ objectPosition: '50% 30%' }}
+                            />
                         </div>
                     </motion.div>
                 </div>
             </section>
+
+            {/* 核心功能總覽 */}
+            <section className="py-16 bg-slate-800/30">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-12"
+                    >
+                        <div className="flex items-center justify-center space-x-3 mb-6">
+                            <Camera className="h-8 w-8 text-blue-400" />
+                            <h2 className="text-3xl font-bold text-white">核心功能總覽</h2>
+                        </div>
+                        <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+                            結合影像辨識與壓力感測，打造完整的舌頭訓練體驗
+                        </p>
+                    </motion.div>
+
+                    {/* 幻燈片展示 */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                        {[
+                            'images/o01.png',
+                            'images/o02.png',
+                            'images/o03.png',
+                            'images/o04.png'
+                        ].map((image, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                viewport={{ once: true }}
+                                className="aspect-[9/16] rounded-3xl overflow-hidden shadow-2xl"
+                            >
+                                <img
+                                    src={`${import.meta.env.BASE_URL}${image}`} // ✅ 自動加上 base 路徑
+                                    alt={`手機介面展示 ${index + 1}`}
+                                    className="w-full h-full object-cover"
+                                />
+                            </motion.div>
+                        ))}
+                    </div>
+
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6 }}
+                            viewport={{ once: true }}
+                            className="bg-slate-800/50 rounded-2xl p-8"
+                        >
+                            <div className="flex items-center space-x-3 mb-4">
+                                <Camera className="h-6 w-6 text-blue-400" />
+                                <h3 className="text-xl font-semibold text-white">舌頭體操互動訓練（影像辨識）</h3>
+                            </div>
+                            <p className="text-gray-300 leading-relaxed">
+                                透過攝影機進行舌頭動作辨識，將訓練 gamify 化，使使用者在遊戲互動中完成舌頭靈活度訓練。系統即時判定動作完成度，並提供清晰的文字提示與得分基準。
+                            </p>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            viewport={{ once: true }}
+                            className="bg-slate-800/50 rounded-2xl p-8"
+                        >
+                            <div className="flex items-center space-x-3 mb-4">
+                                <TrendingUp className="h-6 w-6 text-blue-400" />
+                                <h3 className="text-xl font-semibold text-white">健舌器壓力感測訓練</h3>
+                            </div>
+                            <p className="text-gray-300 leading-relaxed">
+                                結合健舌器的壓力感測功能，將舌壓訓練轉化為可量化的數值回饋。使用者可透過遊戲化操作提升舌肌力量，並即時看到壓力曲線、得分與完成度。
+                            </p>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 自動分析與後台系統 */}
+            <section className="py-16">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-12"
+                    >
+                        <div className="flex items-center justify-center space-x-3 mb-6">
+                            <UserCheck className="h-8 w-8 text-blue-400" />
+                            <h2 className="text-3xl font-bold text-white">精準分析與後台整合</h2>
+                        </div>
+                        <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+                            以資料為核心，協助追蹤訓練進展並優化決策
+                        </p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                            className="space-y-6"
+                        >
+                            <img
+                                src={`${import.meta.env.BASE_URL}images/o05.png`}
+                                alt="管理介面"
+                                className="w-full h-96 object-cover rounded-2xl"
+                                style={{ objectPosition: '50% 40%' }}
+                            />
+                            <div className="bg-slate-800/50 rounded-2xl p-8">
+                                <h3 className="text-2xl font-bold text-white mb-4">智能數據分析</h3>
+                                <div className="space-y-3">
+                                    <div className="flex items-center space-x-3">
+                                        <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                                        <span className="text-gray-300">動作辨識與分數評估</span>
+                                    </div>
+                                    <div className="flex items-center space-x-3">
+                                        <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                                        <span className="text-gray-300">進度追蹤與趨勢圖</span>
+                                    </div>
+                                    <div className="flex items-center space-x-3">
+                                        <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                                        <span className="text-gray-300">行為提示</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                            className="space-y-6"
+                        >
+                            <img
+                                src={`${import.meta.env.BASE_URL}images/o06.png`}
+                                alt="圖表"
+                                className="w-full h-96 object-cover rounded-2xl"
+                            />
+                            <div className="bg-slate-800/50 rounded-2xl p-8">
+                                <h3 className="text-2xl font-bold text-white mb-4">後台管理</h3>
+                                <div className="space-y-3">
+                                    <div className="flex items-center space-x-3">
+                                        <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                                        <span className="text-gray-300">使用者資料管理</span>
+                                    </div>
+                                    <div className="flex items-center space-x-3">
+                                        <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                                        <span className="text-gray-300">後台數據分析</span>
+                                    </div>
+                                    <div className="flex items-center space-x-3">
+                                        <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                                        <span className="text-gray-300">前台進度追蹤與統計</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 教學與使用輔助 */}
+            <section className="py-16 bg-slate-800/30">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-12"
+                    >
+                        <div className="flex items-center justify-center space-x-3 mb-6">
+                            <Eye className="h-8 w-8 text-blue-400" />
+                            <h2 className="text-3xl font-bold text-white">教學與使用輔助</h2>
+                        </div>
+                        <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+                            循序漸進的指導，隨時獲得操作幫助
+                        </p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            viewport={{ once: true }}
+                            className="text-center"
+                        >
+                            <img
+                                src={`${import.meta.env.BASE_URL}images/o08.png`}
+                                alt="示範教學"
+                                className="w-full h-[390px] object-cover rounded-xl mb-6"
+                            />
+                            <div className="bg-slate-800/50 rounded-2xl p-6">
+                                <h3 className="text-xl font-semibold text-white mb-4">示範教學</h3>
+                                <p className="text-gray-300">提供完整的操作流程與示範，幫助使用者快速上手</p>
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            viewport={{ once: true }}
+                            className="text-center"
+                        >
+                            <img
+                                src={`${import.meta.env.BASE_URL}images/o09.png`}
+                                alt="互動提示"
+                                className="w-full h-[390px] object-cover rounded-xl mb-6"
+                            />
+                            <div className="bg-slate-800/50 rounded-2xl p-6">
+                                <h3 className="text-xl font-semibold text-white mb-4">互動提示</h3>
+                                <p className="text-gray-300">在遊戲或訓練過程中，提供提示與建議，確保動作正確</p>
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            viewport={{ once: true }}
+                            className="text-center"
+                        >
+                            <img
+                                src={`${import.meta.env.BASE_URL}images/o07.png`} alt="任務難易度調整"
+                                className="w-full h-[390px] object-cover rounded-xl mb-6"
+                            />
+                            <div className="bg-slate-800/50 rounded-2xl p-6">
+                                <h3 className="text-xl font-semibold text-white mb-4">任務難易度調整</h3>
+                                <p className="text-gray-300">根據使用者能力，可調整訓練難度，讓訓練更有成效。</p>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
         </>
     )
+
+    // 醫美互聯網無針注射技術核心介紹
     const IoTJetInjectDetails = () => (
         <>
 
@@ -1262,7 +1501,6 @@ const ProjectDetail = () => {
                 </div>
             </section>
 
-
             {/* 沉浸式互動世界 */}
             <section className="py-16 bg-slate-800/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1852,22 +2090,22 @@ const ProjectDetail = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex space-x-4 pt-4">
-                                    <a
-                                        href={project.demoUrl}
-                                        className="flex items-center space-x-2 px-6 py-3 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition-colors"
-                                    >
-                                        <ExternalLink className="h-4 w-4" />
-                                        <span>查看演示</span>
-                                    </a>
-                                    <a
-                                        href={project.githubUrl}
-                                        className="flex items-center space-x-2 px-6 py-3 bg-gray-700 text-white rounded-xl hover:bg-gray-600 transition-colors"
-                                    >
-                                        <Github className="h-4 w-4" />
-                                        <span>查看程式碼</span>
-                                    </a>
-                                </div>
+                                {/*<div className="flex space-x-4 pt-4">*/}
+                                {/*    <a*/}
+                                {/*        href={project.demoUrl}*/}
+                                {/*        className="flex items-center space-x-2 px-6 py-3 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition-colors"*/}
+                                {/*    >*/}
+                                {/*        <ExternalLink className="h-4 w-4" />*/}
+                                {/*        <span>查看演示</span>*/}
+                                {/*    </a>*/}
+                                {/*    <a*/}
+                                {/*        href={project.githubUrl}*/}
+                                {/*        className="flex items-center space-x-2 px-6 py-3 bg-gray-700 text-white rounded-xl hover:bg-gray-600 transition-colors"*/}
+                                {/*    >*/}
+                                {/*        <Github className="h-4 w-4" />*/}
+                                {/*        <span>查看程式碼</span>*/}
+                                {/*    </a>*/}
+                                {/*</div>*/}
                             </div>
                         </div>
                     </motion.div>

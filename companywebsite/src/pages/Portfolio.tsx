@@ -59,7 +59,7 @@ const Portfolio = () => {
         ,
         {
             id: 3,
-            title: '舌頭訓練體感互動遊戲',
+            title: '吞嚥賦能體感訓練遊戲',
             category: 'mobile',
             image: 'images/z08.png',
             description: '這款 APP 透過 舌頭體感互動遊戲，幫助使用者提升舌頭靈活度與吞嚥能力，並提供 即時回饋與進度追蹤',
@@ -168,26 +168,26 @@ const Portfolio = () => {
                                             className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                        <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                            <div
-                                                onClick={(e) => {
-                                                    e.preventDefault()
-                                                    window.open(project.demoUrl, '_blank')
-                                                }}
-                                                className="p-2 bg-blue-500 rounded-full text-white hover:bg-blue-600 transition-colors cursor-pointer"
-                                            >
-                                                <ExternalLink className="h-4 w-4" />
-                                            </div>
-                                            <div
-                                                onClick={(e) => {
-                                                    e.preventDefault()
-                                                    window.open(project.githubUrl, '_blank')
-                                                }}
-                                                className="p-2 bg-gray-700 rounded-full text-white hover:bg-gray-600 transition-colors cursor-pointer"
-                                            >
-                                                <Github className="h-4 w-4" />
-                                            </div>
-                                        </div>
+                                    {/*    <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">*/}
+                                    {/*        */}{/*<div*/}
+                                    {/*        */}{/*    onClick={(e) => {*/}
+                                    {/*        */}{/*        e.preventDefault()*/}
+                                    {/*        */}{/*        window.open(project.demoUrl, '_blank')*/}
+                                    {/*        */}{/*    }}*/}
+                                    {/*        */}{/*    className="p-2 bg-blue-500 rounded-full text-white hover:bg-blue-600 transition-colors cursor-pointer"*/}
+                                    {/*        */}{/*>*/}
+                                    {/*        */}{/*    <ExternalLink className="h-4 w-4" />*/}
+                                    {/*        */}{/*</div>*/}
+                                    {/*        */}{/*<div*/}
+                                    {/*        */}{/*    onClick={(e) => {*/}
+                                    {/*        */}{/*        e.preventDefault()*/}
+                                    {/*        */}{/*        window.open(project.githubUrl, '_blank')*/}
+                                    {/*        */}{/*    }}*/}
+                                    {/*        */}{/*    className="p-2 bg-gray-700 rounded-full text-white hover:bg-gray-600 transition-colors cursor-pointer"*/}
+                                    {/*        */}{/*>*/}
+                                    {/*        */}{/*    <Github className="h-4 w-4" />*/}
+                                    {/*        */}{/*</div>*/}
+                                    {/*    </div>*/}
                                     </div>
 
                                     <div className="p-6">
