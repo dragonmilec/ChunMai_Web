@@ -31,7 +31,7 @@ export default defineConfig(({ mode }) => {
 
     return {
         plugins: [react()],
-        base: "/ChunMai_Web/",
+        base: "./",
         build,
         esbuild,
         define,
