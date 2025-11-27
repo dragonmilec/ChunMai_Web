@@ -39,13 +39,13 @@ const Contact = () => {
         {
             icon: <Mail className="h-6 w-6" />,
             title: '電子郵件',
-            content: 'Jeff.Tseng@dragon-mile.com',
+            content: 'anthony.liau@dragon-mile.com',
             description: '我們會盡快回覆'
         },
         {
             icon: <Phone className="h-6 w-6" />,
             title: '電話',
-            content: '+886 910921303',
+            content: '+07 552-3561',
             description: '週一至週五 9:00-18:00'
         },
         {

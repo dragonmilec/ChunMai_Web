@@ -64,7 +64,7 @@ const About = () => {
                         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                             關於
                             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                                純邁
+                                醇邁
                             </span>
                         </h1>
                         <p className="text-xl text-gray-300 max-w-3xl mx-auto">

@@ -22,7 +22,7 @@ const Footer = () => {
                     <div className="col-span-1 md:col-span-2">
                         <div className="flex items-center space-x-2 mb-4">
                             <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                                純邁
+                                醇邁
                             </span>
                         </div>
                         <p className="text-gray-400 mb-6 max-w-md">
@@ -96,7 +96,7 @@ const Footer = () => {
 
                 <div className="border-t border-slate-700 mt-8 pt-8 text-center">
                     <p className="text-gray-400">
-                        © 2025 純邁有限公司. 保留所有權利.
+                        © 2025 醇邁有限公司. 保留所有權利.
                     </p>
                 </div>
             </div>
