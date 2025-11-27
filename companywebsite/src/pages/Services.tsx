@@ -1,7 +1,7 @@
 ﻿
 import * as React from "react";
 import { motion } from 'framer-motion'
-import { Code, Smartphone, Database, Cloud, Palette, Shield, Zap, Users } from 'lucide-react'
+import { Code, Smartphone, Database, Cloud, Palette, Shield, Zap, Users, BeakerIcon } from 'lucide-react'
 
 const Services = () => {
     const services = [
@@ -48,7 +48,7 @@ const Services = () => {
             price: '月費 NT$ 8,000'
         },
         {
-            icon: <Shield className="h-12 w-12" />,
+            icon: <BeakerIcon className="h-12 w-12" />,
             title: '醫療器材系統銷售',
             description: '提供完整的醫療器材管理系統與銷售解決方案，支援設備追蹤與資料分析',
             features: [
@@ -164,9 +164,9 @@ const Services = () => {
                                         </li>
                                     ))}
                                 </ul>
-                            {/*    <div className="text-blue-400 font-semibold text-lg">*/}
-                            {/*        {service.price}*/}
-                            {/*    </div>*/}
+                                {/*    <div className="text-blue-400 font-semibold text-lg">*/}
+                                {/*        {service.price}*/}
+                                {/*    </div>*/}
                             </motion.div>
                         ))}
                     </div>

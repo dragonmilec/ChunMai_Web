@@ -21,18 +21,10 @@ const Contact = () => {
         })
     }
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        // 這裡可以加入表單提交邏輯
-        toast.success('訊息已送出！我們會盡快與您聯絡。')
-        setFormData({
-            name: '',
-            email: '',
-            company: '',
-            service: '',
-            budget: '',
-            message: ''
-        })
+        window.location.href = `mailto:anthony.liau@dragon-mile.com?subject=${formData.service}&body=${formData.message}`
+
     }
 
     const contactInfo = [

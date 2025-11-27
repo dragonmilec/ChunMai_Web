@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@lumi.new/sdk':
-        specifier: 0.2.1
-        version: 0.2.1
       framer-motion:
         specifier: 12.23.11
         version: 12.23.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -267,9 +264,6 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
-
-  '@lumi.new/sdk@0.2.1':
-    resolution: {integrity: sha512-FSqGe/3fudj989JQRBaIix8e7IA0UW1r8saZD2Nvy7nfhuHsGnDDhB33xTzmmpTSc0w06+GnFVK0cMvxXCqqGA==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1510,13 +1504,6 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
-
-  '@lumi.new/sdk@0.2.1':
-    dependencies:
-      crypto-js: 4.2.0
-      object-hash: 3.0.0
-      ofetch: 1.4.1
-      uuid: 11.1.0
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
