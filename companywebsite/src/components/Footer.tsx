@@ -80,7 +80,7 @@ const Footer = () => {
                         <ul className="space-y-3">
                             <li className="flex items-center space-x-3 text-gray-400">
                                 <Mail className="h-4 w-4 text-blue-400" />
-                                <span>Jeff.Tseng@dragon-mile.com</span>
+                                <span>anthony.liau@dragon-mile.com</span>
                             </li>
                             <li className="flex items-center space-x-3 text-gray-400">
                                 <Phone className="h-4 w-4 text-blue-400" />
