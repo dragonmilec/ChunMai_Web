@@ -1,54 +1,98 @@
-﻿
-import React, { useState, useEffect } from 'react'
+
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { ArrowRight, Zap, Shield, Rocket, Users, Code, Sparkles, Star, TrendingUp, Award } from 'lucide-react'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
+import { ArrowRight, ChevronLeft, ChevronRight, Zap, Shield, Rocket, Users, Code, X } from 'lucide-react'
+
+import InteractiveSphere from '../components/InteractiveSphere'
 
 const Home = () => {
-    const { scrollYProgress } = useScroll()
-    const y = useTransform(scrollYProgress, [0, 1], [0, -50])
-    const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+    const reduceMotion = useReducedMotion()
 
     // 產品展示數據
     const showcaseProjects = [
         {
+            id: 4,
             title: '物聯網醫美',
             image: 'images/z07.png',
             description: '超音速霧化直達真皮層，雲端精準控制與QRCODE授權啟用的物聯網藥劑注射平台。',
-            color: 'from-orange-500 to-red-500'
+            color: 'from-white to-slate-900'
         },
         {
+            id: 2,
             title: '語言互動治療軟體',
             image: 'images/c02.png',
             description: '適用語言遲緩、自閉症',
-            color: 'from-blue-500 to-cyan-500'
+            color: 'from-white to-slate-900'
         },
         {
+            id: 1,
             title: '智慧口腔暨吞嚥賦能照護雲管家',
             image: 'images/t05.png',
             description: '提供全方位的口腔資料管理及分析功能',
-            color: 'from-green-500 to-emerald-500'
+            color: 'from-white to-slate-900'
         },
         {
+            id: 3,
             title: '吞嚥賦能體感訓練遊戲',
             image: 'images/z08.png',
             description: '高效業務流程',
-            color: 'from-purple-500 to-pink-500'
+            color: 'from-white to-slate-900'
         }
       
     ]
 
     const [currentProject, setCurrentProject] = useState(0)
-    const [isHovering, setIsHovering] = useState(false)
+    const [carouselPaused, setCarouselPaused] = useState(false)
+    const [carouselWidth, setCarouselWidth] = useState(0)
+    const [selectedProject, setSelectedProject] = useState<(typeof showcaseProjects)[number] | null>(null)
+    const carouselRef = useRef<HTMLDivElement>(null)
+    const suppressCardClickRef = useRef(false)
+
+    const moveProject = (direction: number) => {
+        setCurrentProject(current => (current + direction + showcaseProjects.length) % showcaseProjects.length)
+    }
 
     useEffect(() => {
-        if (isHovering) return // 滑鼠懸停時不自動翻頁
+        const carousel = carouselRef.current
+        if (!carousel) return
+        const updateWidth = () => setCarouselWidth(carousel.clientWidth)
+        const observer = new ResizeObserver(updateWidth)
+        observer.observe(carousel)
+        updateWidth()
+        return () => observer.disconnect()
+    }, [])
 
-        const interval = setInterval(() => {
-            setCurrentProject((prev) => (prev + 1) % showcaseProjects.length)
-        }, 4000)
-        return () => clearInterval(interval)
-    }, [isHovering, currentProject])
+    useEffect(() => {
+        if (carouselPaused || selectedProject || reduceMotion) return
+        const interval = window.setInterval(() => {
+            setCurrentProject(current => (current + 1) % showcaseProjects.length)
+        }, 5000)
+        return () => window.clearInterval(interval)
+    }, [carouselPaused, selectedProject, reduceMotion, showcaseProjects.length])
+
+    useEffect(() => {
+        if (!selectedProject) return
+        const previousOverflow = document.body.style.overflow
+        const closeOnEscape = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') setSelectedProject(null)
+        }
+        document.body.style.overflow = 'hidden'
+        window.addEventListener('keydown', closeOnEscape)
+        return () => {
+            document.body.style.overflow = previousOverflow
+            window.removeEventListener('keydown', closeOnEscape)
+        }
+    }, [selectedProject])
+
+    const slideWidth = Math.max(1, carouselWidth - 64)
+    const slidePosition = (index: number) => {
+        let position = index - currentProject
+        const half = showcaseProjects.length / 2
+        if (position > half) position -= showcaseProjects.length
+        if (position < -half) position += showcaseProjects.length
+        return position
+    }
 
     const features = [
         {
@@ -79,26 +123,17 @@ const Home = () => {
     }
 
     return (
-        <div className="pt-16">
-            {/* Hero Section */}
-            <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900/20 to-slate-900">
-                {/* 簡約背景效果 */}
-                <div className="absolute inset-0">
-                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent"></div>
-                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent"></div>
-
-                    {/* 網格背景 */}
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f12_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f12_1px,transparent_1px)] bg-[size:64px_64px]"></div>
-                </div>
-
-                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="pt-20">
+            <div className="home-sphere-flow">
+                {/* Hero Section */}
+                <section className="sphere-hero" aria-label="創新軟體，創造價值">
+                <div className="sphere-hero__layout">
                         {/* 左側：文字內容 */}
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
-                            className="space-y-8"
+                            className="sphere-hero__copy space-y-8"
                         >
                             {/* 公司標誌 */}
 
@@ -129,7 +164,7 @@ const Home = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.6 }}
-                                className="flex flex-col sm:flex-row gap-4"
+                                className="sphere-hero__actions flex flex-col sm:flex-row gap-4"
                             >
                                 <Link
                                     to="/contact"
@@ -148,177 +183,161 @@ const Home = () => {
                                 </Link>
                             </motion.div>
                         </motion.div>
-
-                        {/* 右側：專業產品展示圖片 */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8, delay: 0.3 }}
-                            className="relative hidden lg:block"
-                        >
-                            {/* 主要展示圖 */}
-                            <div className="relative z-10">
-                                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
-                                    <img
-                                        src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80"
-                                        alt="專業團隊協作"
-                                        className="w-full h-[500px] object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
-                                    {/*<div className="absolute bottom-0 left-0 right-0 p-8">*/}
-                                    {/*    <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">*/}
-                                    {/*        <div className="flex items-center space-x-4">*/}
-                                    {/*            <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">*/}
-                                    {/*                <Shield className="h-6 w-6 text-white" />*/}
-                                    {/*            </div>*/}
-                                    {/*            <div>*/}
-                                    {/*                <p className="text-white font-semibold text-lg">企業級安全標準</p>*/}
-                                    {/*                <p className="text-gray-300 text-sm">ISO 27001 認證</p>*/}
-                                    {/*            </div>*/}
-                                    {/*        </div>*/}
-                                    {/*    </div>*/}
-                                    {/*</div>*/}
-                                </div>
-                            </div>
-
-                            {/* 裝飾元素 */}
-                            <div className="absolute -top-6 -right-6 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl"></div>
-                            <div className="absolute -bottom-6 -left-6 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl"></div>
-                        </motion.div>
+                    <div className="sphere-hero__visual">
+                        <InteractiveSphere />
                     </div>
                 </div>
-
-                {/* Scroll Indicator */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1 }}
-                    className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-                >
-                    <div className="flex flex-col items-center space-y-2">
-                        <span className="text-sm text-gray-400">向下滾動</span>
-                        <div className="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center">
-                            <div className="w-1 h-3 bg-blue-500 rounded-full mt-2 animate-bounce"></div>
-                        </div>
+                <div className="sphere-hero__scroll" aria-hidden="true">
+                    <div className="w-5 h-8 border border-gray-600 rounded-full flex justify-center">
+                        <div className="w-1 h-2 bg-gray-400 rounded-full mt-2 animate-bounce" />
                     </div>
-                </motion.div>
+                </div>
             </section>
 
             {/* 產品展示區塊 */}
-            <section className="py-20 bg-slate-900/50 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/5 to-transparent"></div>
+            <section className="home-content-two py-20" data-sphere-content="2">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="text-center mb-16"
-                    >
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                            精選產品展示
-                        </h2>
-                        <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                            探索我們為客戶打造的創新解決方案
-                        </p>
-                    </motion.div>
+                  
 
-                    <div className="relative">
-                        {/* 產品輪播 */}
-                        <div
-                            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-                            onMouseEnter={() => setIsHovering(true)}
-                            onMouseLeave={() => setIsHovering(false)}
+                    <div
+                        className="product-showcase-panel relative"
+                        onMouseEnter={() => setCarouselPaused(true)}
+                        onMouseLeave={() => setCarouselPaused(false)}
+                        onFocusCapture={() => setCarouselPaused(true)}
+                        onBlurCapture={() => setCarouselPaused(false)}
+                        >  <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                            className="text-center mb-16"
                         >
-                            {/* 左側：產品圖片 */}
-                            <motion.div
-                                key={currentProject}
-                                initial={{ opacity: 0, x: -50 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: 50 }}
-                                transition={{ duration: 0.5 }}
-                                className="relative"
-                            >
-                                <div className="relative rounded-2xl overflow-hidden shadow-2xl group">
-                                    <img
-                                        src={`${import.meta.env.BASE_URL}${showcaseProjects[currentProject].image}`}
-                                        alt={showcaseProjects[currentProject].title}
-                                        className="w-full h-96 object-cover transform group-hover:scale-110 transition-transform duration-700"
-                                    />
-                                    <div className={`absolute inset-0 bg-gradient-to-br ${showcaseProjects[currentProject].color} opacity-20 group-hover:opacity-30 transition-opacity`}></div>
-                                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-                                        <h3 className="text-2xl font-bold text-white mb-2">
-                                            {showcaseProjects[currentProject].title}
-                                        </h3>
-                                        <p className="text-gray-200">
-                                            {showcaseProjects[currentProject].description}
-                                        </p>
-                                    </div>
-                                </div>
-
-                                {/* 裝飾元素 */}
-                                <div className="absolute -top-6 -right-6 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl"></div>
-                                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl"></div>
+                                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+                                    精選產品展示
+                                </h2>
+                                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                                    探索我們為客戶打造的創新解決方案
+                                </p>
                             </motion.div>
-
-                            {/* 右側：項目列表 */}
-                            <div className="space-y-4">
-                                {showcaseProjects.map((project, index) => (
-                                    <motion.div
-                                        key={index}
-                                        onClick={() => {
-                                            setCurrentProject(index)
-                                            // 點擊時重置計時器
-                                            setIsHovering(false)
-                                        }}
-                                        className={`p-6 rounded-xl cursor-pointer transition-all duration-300 ${currentProject === index
-                                                ? 'bg-gradient-to-r ' + project.color + ' shadow-lg'
-                                                : 'bg-slate-800/50 hover:bg-slate-800'
-                                            }`}
-                                        whileHover={{ scale: 1.02 }}
-                                        whileTap={{ scale: 0.98 }}
-                                    >
-                                        <div className="flex items-center justify-between">
-                                            <div>
-                                                <h4 className={`text-xl font-bold mb-2 ${currentProject === index ? 'text-white' : 'text-gray-200'
-                                                    }`}>
-                                                    {project.title}
-                                                </h4>
-                                                <p className={currentProject === index ? 'text-white/90' : 'text-gray-400'}>
-                                                    {project.description}
-                                                </p>
+                        <div
+                            ref={carouselRef}
+                            className="product-showcase-viewport relative overflow-hidden rounded-[18px] outline-none"
+                            style={{ height: 'clamp(460px, 48vw, 620px)' }}
+                            role="region"
+                            aria-roledescription="carousel"
+                            aria-label="產品展示"
+                            tabIndex={0}
+                            onKeyDown={event => {
+                                if (event.key === 'ArrowLeft') moveProject(-1)
+                                if (event.key === 'ArrowRight') moveProject(1)
+                            }}
+                        >
+                            <motion.div
+                                className="product-showcase-stage absolute inset-0 cursor-grab select-none active:cursor-grabbing"
+                                style={{ touchAction: 'pan-y' }}
+                                drag="x"
+                                dragConstraints={{ left: 0, right: 0 }}
+                                dragElastic={0.65}
+                                dragMomentum={false}
+                                dragSnapToOrigin
+                                onDragStart={() => {
+                                    suppressCardClickRef.current = true
+                                    setCarouselPaused(true)
+                                }}
+                                onDragEnd={(_, info) => {
+                                    const shouldMove = Math.abs(info.offset.x) > 48 || Math.abs(info.velocity.x) > 400
+                                    if (shouldMove) moveProject(info.offset.x < 0 ? 1 : -1)
+                                    setCarouselPaused(false)
+                                    window.setTimeout(() => {
+                                        suppressCardClickRef.current = false
+                                    }, 0)
+                                }}
+                            >
+                                {showcaseProjects.map((project, index) => {
+                                    const position = slidePosition(index)
+                                    const active = position === 0
+                                    const slideGap = 24;
+                                    const visible = Math.abs(position) <= 1
+                                    return (
+                                        <motion.article
+                                            key={project.title}
+                                            className="product-showcase-card group grid cursor-pointer overflow-hidden rounded-[18px] border border-slate-400/15 bg-slate-900/70 shadow-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                                            style={{
+                                                position: 'absolute',
+                                                top: 0,
+                                                bottom: 0,
+                                                width: slideWidth,
+                                                gridTemplateRows: 'minmax(0, 66%) minmax(0, 34%)',
+                                                transformOrigin: 'center',
+                                            }}
+                                            animate={{
+                                                x: 32 + position * (slideWidth + slideGap),
+                                                scale: 1,
+                                                opacity: visible ? 1 : 0,
+                                                zIndex: active ? 2 : 1,
+                                            }}
+                                            transition={reduceMotion ? { duration: 0 } : { type: 'spring', stiffness: 260, damping: 30 }}
+                                            aria-hidden={!active}
+                                            role="button"
+                                            tabIndex={active ? 0 : -1}
+                                            aria-label={`查看 ${project.title} 簡介`}
+                                            onClick={() => {
+                                                if (active && !suppressCardClickRef.current) setSelectedProject(project)
+                                            }}
+                                            onKeyDown={event => {
+                                                if (active && (event.key === 'Enter' || event.key === ' ')) {
+                                                    event.preventDefault()
+                                                    setSelectedProject(project)
+                                                }
+                                            }}
+                                        >
+                                            <div className="product-showcase-media relative min-h-0 overflow-hidden">
+                                                <img
+                                                    src={`${import.meta.env.BASE_URL}${project.image}`}
+                                                    alt={project.title}
+                                                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                                    loading={index === 0 ? 'eager' : 'lazy'}
+                                                    draggable={false}
+                                                />
+                                                <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-20 transition-opacity group-hover:opacity-30`} />
+                                                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-950 to-transparent" />
                                             </div>
-                                            <div className={`w-12 h-12 rounded-full flex items-center justify-center ${currentProject === index ? 'bg-white/20' : 'bg-blue-500/10'
-                                                }`}>
-                                                <TrendingUp className={`h-6 w-6 ${currentProject === index ? 'text-white' : 'text-blue-400'
-                                                    }`} />
+                                            <div className="product-showcase-copy min-h-0 overflow-hidden p-[clamp(18px,2.5vw,30px)]">
+                                                <div className="mb-3 flex items-center justify-between gap-4">
+                                                    <h3 className="text-2xl font-bold text-white">{project.title}</h3>
+                                                    <span className="shrink-0 text-sm font-semibold tracking-widest text-blue-300">
+                                                        {String(index + 1).padStart(2, '0')}
+                                                    </span>
+                                                </div>
+                                                <p className="text-gray-300 leading-relaxed">{project.description}</p>
                                             </div>
-                                        </div>
-                                    </motion.div>
-                                ))}
-                            </div>
+                                        </motion.article>
+                                    )
+                                })}
+                            </motion.div>
+                            <button type="button" className="product-showcase-control product-showcase-control--previous absolute left-2 top-1/2 z-[5] grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-blue-200/35 bg-slate-950/80 text-white shadow-xl" aria-label="上一個產品" onClick={() => moveProject(-1)}>
+                                <ChevronLeft aria-hidden="true" />
+                            </button>
+                            <button type="button" className="product-showcase-control product-showcase-control--next absolute right-2 top-1/2 z-[5] grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-blue-200/35 bg-slate-950/80 text-white shadow-xl" aria-label="下一個產品" onClick={() => moveProject(1)}>
+                                <ChevronRight aria-hidden="true" />
+                            </button>
                         </div>
-
-                        {/* 導航點 */}
-                        <div className="flex justify-center space-x-2 mt-8">
-                            {showcaseProjects.map((_, index) => (
+                        <div className="product-showcase-dots flex justify-center gap-2 pt-4" aria-label="選擇產品">
+                            {showcaseProjects.map((project, index) => (
                                 <button
-                                    key={index}
-                                    onClick={() => {
-                                        setCurrentProject(index)
-                                        // 點擊時重置計時器
-                                        setIsHovering(false)
-                                    }}
-                                    className={`w-3 h-3 rounded-full transition-all duration-300 ${currentProject === index
-                                            ? 'bg-blue-500 w-8'
-                                            : 'bg-gray-600 hover:bg-gray-500'
-                                        }`}
+                                    type="button"
+                                    key={project.title}
+                                    aria-label={`顯示第 ${index + 1} 個產品`}
+                                    className={currentProject === index ? 'h-2 w-7 rounded-full bg-blue-400' : 'h-2 w-2 rounded-full bg-slate-400/50'}
+                                    aria-current={currentProject === index ? 'true' : undefined}
+                                    onClick={() => setCurrentProject(index)}
                                 />
                             ))}
                         </div>
                     </div>
                 </div>
             </section>
+            </div>
 
             {/* Features Section */}
             <section className="py-20 bg-slate-800/50">
@@ -395,6 +414,63 @@ const Home = () => {
                     </motion.div>
                 </div>
             </section>
+
+            <AnimatePresence>
+                {selectedProject && (
+                    <motion.div
+                        className="fixed inset-0 z-[80] flex items-center justify-center bg-slate-950/80 p-4 backdrop-blur-md"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelectedProject(null)}
+                    >
+                        <motion.article
+                            role="dialog"
+                            aria-modal="true"
+                            aria-labelledby="showcase-dialog-title"
+                            className="relative grid max-h-[90svh] w-full max-w-3xl overflow-y-auto rounded-3xl border border-slate-600/60 bg-slate-900 shadow-2xl md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]"
+                            initial={reduceMotion ? false : { opacity: 0, y: 24, scale: 0.96 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 18, scale: 0.97 }}
+                            transition={{ duration: 0.22 }}
+                            onClick={event => event.stopPropagation()}
+                        >
+                            <button
+                                type="button"
+                                className="absolute right-3 top-3 z-10 grid h-11 w-11 place-items-center rounded-full border border-white/20 bg-slate-950/75 text-white transition-colors hover:bg-slate-800"
+                                aria-label="關閉產品介紹"
+                                onClick={() => setSelectedProject(null)}
+                            >
+                                <X aria-hidden="true" />
+                            </button>
+                            <div className="min-h-64 overflow-hidden bg-slate-950 md:min-h-full">
+                                <img
+                                    src={`${import.meta.env.BASE_URL}${selectedProject.image}`}
+                                    alt={selectedProject.title}
+                                    className="h-full w-full object-cover"
+                                />
+                            </div>
+                            <div className="flex flex-col justify-center p-7 sm:p-9">
+                                <span className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-blue-300">產品介紹</span>
+                                <h2 id="showcase-dialog-title" className="pr-10 text-3xl font-bold text-white">
+                                    {selectedProject.title}
+                                </h2>
+                                <p className="mt-5 leading-8 text-slate-300">
+                                    {selectedProject.description}
+                                </p>
+                                <Link
+                                    to={`/portfolio/${selectedProject.id}`}
+                                    className="mt-8 inline-flex w-fit items-center gap-2 rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-500"
+                                    onClick={() => setSelectedProject(null)}
+                                >
+                                    <span>了解詳情</span>
+                                    <ArrowRight className="h-5 w-5" aria-hidden="true" />
+                                </Link>
+                            </div>
+                        </motion.article>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     )
 }

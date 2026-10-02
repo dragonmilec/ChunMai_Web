@@ -111,7 +111,7 @@ const Services = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' })
     }
     return (
-        <div className="pt-16">
+        <div className="pt-20">
             {/* Hero Section */}
             <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

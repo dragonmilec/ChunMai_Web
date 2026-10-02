@@ -1,7 +1,6 @@
-﻿
-import React from 'react'
+
 import { Link } from 'react-router-dom'
-import { Code2, Mail, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-react'
+import { Mail, Phone, MapPin } from 'lucide-react'
 
 const Footer = () => {
 
@@ -12,7 +11,7 @@ const Footer = () => {
 
     const handleRelatedProjectClickHome = () => {
         window.scrollTo(0, 0)
-    } 
+    }
 
     return (
         <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border-t border-slate-700">
@@ -21,6 +20,14 @@ const Footer = () => {
                     {/* Company Info */}
                     <div className="col-span-1 md:col-span-2">
                         <div className="flex items-center space-x-2 mb-4">
+                            <div className="w-auto h-8 relative">
+                                <img
+                                    src={`${import.meta.env.BASE_URL}icons/square-terminal_w.png`}
+                                    alt="醇邁 Logo"
+                                    className="w-full h-full object-cover rounded-lg group-hover:opacity-80 transition-opacity"
+                                />
+                            </div>
+
                             <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                                 醇邁
                             </span>
@@ -29,17 +36,17 @@ const Footer = () => {
                             專業的軟體開發團隊，致力於為客戶提供創新、高品質的軟體解決方案。
                             從網站開發到企業系統，我們都能為您量身打造。
                         </p>
-                        <div className="flex space-x-4">
-                            <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                                <Github className="h-5 w-5" />
-                            </a>
-                            <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                                <Linkedin className="h-5 w-5" />
-                            </a>
-                            <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                                <Twitter className="h-5 w-5" />
-                            </a>
-                        </div>
+                        {/*<div className="flex space-x-4">*/}
+                        {/*    <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">*/}
+                        {/*        <Github className="h-5 w-5" />*/}
+                        {/*    </a>*/}
+                        {/*    <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">*/}
+                        {/*        <Linkedin className="h-5 w-5" />*/}
+                        {/*    </a>*/}
+                        {/*    <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">*/}
+                        {/*        <Twitter className="h-5 w-5" />*/}
+                        {/*    </a>*/}
+                        {/*</div>*/}
                     </div>
 
                     {/* Quick Links */}
