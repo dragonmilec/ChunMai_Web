@@ -5,7 +5,7 @@
     align-items: center;
     min-height: max(700px, calc(100svh - 64px)); 
     overflow: hidden;
-    background: linear-gradient(130deg, #0f172a 15%, #141c3b 65%, #101a32);
+    background: linear-gradient(130deg, #27292b 15%, #272727 65%, #212121);
 }
 
 .home-sphere-flow {
@@ -13,17 +13,17 @@
     position: relative;
     isolation: isolate;
     overflow: clip;
-    background: linear-gradient(130deg, #0f172a 15%, #141c3b 65%, #101a32);
+    background: linear-gradient(130deg, rgb(255, 255, 255, 0.20), #272727 65%, #212121);
 }
-.home-sphere-flow::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    opacity: var(--sphere-scroll-progress);
-    background: linear-gradient(180deg, #091020 0%, #030712 100%);
-}
+    .home-sphere-flow::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        opacity: var(--sphere-scroll-progress);
+        background: linear-gradient(180deg, #272727 65%, #000000 100%);
+    }
 .home-sphere-flow > .sphere-hero {
     isolation: auto;
     overflow: visible;
@@ -74,7 +74,7 @@
     overflow: hidden;
     border: 1px solid rgba(148, 163, 184, 0.14);
     border-radius: 18px;
-    background: rgba(15, 23, 42, 0.72);
+    background: rgba(28, 28, 28, 0.722);
     box-shadow: 0 18px 44px rgba(0, 0, 0, 0.26);
     transform-origin: center;
     will-change: transform, opacity;
@@ -92,7 +92,7 @@
     border: 1px solid rgba(191, 219, 254, 0.34);
     border-radius: 999px;
     color: white;
-    background: rgba(2, 6, 23, 0.78);
+    background: rgba(13, 13, 13, 0.78);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
     transform: translateY(-50%);
     transition: background 180ms ease, transform 180ms ease;
@@ -178,8 +178,8 @@
     position: absolute;
     inset: 20%;
     border-radius: 50%;
-    background: radial-gradient(circle at 30% 24%, #c5d0dd 0, #758498 12%, #35435a 37%, #141d2d 62%, #8190a3 95%, #d7dfed);
-    box-shadow: inset 2px 1px 7px #dce7ef9c, inset -14px -10px 30px #081020b3;
+    background: radial-gradient(circle at 30% 24%, #c5d0dd 0, #758498 12%, #35435a 37%, #202020 62%, #8190a3 95%, #d7dfed);
+    box-shadow: inset 2px 1px 7px #dce7ef9c, inset -14px -10px 30px #141414B3;
 }
 .hero-sphere__orbit { position: absolute; inset: 9%; border: 1px solid var(--sphere-orbit-color, rgba(161, 184, 212, 0.36)); border-radius: 50%; }
 .hero-sphere__orbit--one { transform: rotate(-28deg) scaleY(0.32); }

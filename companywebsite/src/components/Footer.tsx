@@ -14,7 +14,7 @@ const Footer = () => {
     }
 
     return (
-        <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border-t border-slate-700">
+        <footer className="bg-gradient-to-br from-[#1C1C1C] via-[#2C2C2C] to-[#1C1C1C] border-t border-slate-700">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     {/* Company Info */}
@@ -28,7 +28,7 @@ const Footer = () => {
                                 />
                             </div>
 
-                            <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                            <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-[#FFFFFF] bg-clip-text text-transparent">
                                 醇邁
                             </span>
                         </div>

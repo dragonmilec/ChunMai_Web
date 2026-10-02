@@ -16,28 +16,28 @@ const Home = () => {
             title: '物聯網醫美',
             image: 'images/z07.png',
             description: '超音速霧化直達真皮層，雲端精準控制與QRCODE授權啟用的物聯網藥劑注射平台。',
-            color: 'from-white to-slate-900'
+            color: 'from-white to-[#1C1C1C]'
         },
         {
             id: 2,
             title: '語言互動治療軟體',
             image: 'images/c02.png',
             description: '適用語言遲緩、自閉症',
-            color: 'from-white to-slate-900'
+            color: 'from-white to-[#1C1C1C]'
         },
         {
             id: 1,
             title: '智慧口腔暨吞嚥賦能照護雲管家',
             image: 'images/t05.png',
             description: '提供全方位的口腔資料管理及分析功能',
-            color: 'from-white to-slate-900'
+            color: 'from-white to-[#1C1C1C]'
         },
         {
             id: 3,
             title: '吞嚥賦能體感訓練遊戲',
             image: 'images/z08.png',
             description: '高效業務流程',
-            color: 'from-white to-slate-900'
+            color: 'from-white to-[#1C1C1C]'
         }
       
     ]
@@ -144,7 +144,7 @@ const Home = () => {
                                 transition={{ delay: 0.3 }}
                             >
                                 <span className="text-white">打造</span>
-                                <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"> 卓越數位體驗</span>
+                                <span className="bg-gradient-to-r from-blue-400 to-[#86BBC6] bg-clip-text text-transparent"> 卓越數位體驗</span>
                                 <br />
                                 <span className="text-white">驅動企業成長</span>
                             </motion.h1>
@@ -261,7 +261,7 @@ const Home = () => {
                                     return (
                                         <motion.article
                                             key={project.title}
-                                            className="product-showcase-card group grid cursor-pointer overflow-hidden rounded-[18px] border border-slate-400/15 bg-slate-900/70 shadow-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                                            className="product-showcase-card group grid cursor-pointer overflow-hidden rounded-[18px] border border-slate-400/15 bg-[#1C1C1C]/70 shadow-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
                                             style={{
                                                 position: 'absolute',
                                                 top: 0,
@@ -300,14 +300,11 @@ const Home = () => {
                                                     draggable={false}
                                                 />
                                                 <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-20 transition-opacity group-hover:opacity-30`} />
-                                                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-950 to-transparent" />
+                                                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#0D0D0D] to-transparent" />
                                             </div>
                                             <div className="product-showcase-copy min-h-0 overflow-hidden p-[clamp(18px,2.5vw,30px)]">
                                                 <div className="mb-3 flex items-center justify-between gap-4">
                                                     <h3 className="text-2xl font-bold text-white">{project.title}</h3>
-                                                    <span className="shrink-0 text-sm font-semibold tracking-widest text-blue-300">
-                                                        {String(index + 1).padStart(2, '0')}
-                                                    </span>
                                                 </div>
                                                 <p className="text-gray-300 leading-relaxed">{project.description}</p>
                                             </div>
@@ -315,10 +312,10 @@ const Home = () => {
                                     )
                                 })}
                             </motion.div>
-                            <button type="button" className="product-showcase-control product-showcase-control--previous absolute left-2 top-1/2 z-[5] grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-blue-200/35 bg-slate-950/80 text-white shadow-xl" aria-label="上一個產品" onClick={() => moveProject(-1)}>
+                            <button type="button" className="product-showcase-control product-showcase-control--previous absolute left-2 top-1/2 z-[5] grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-blue-200/35 bg-[#0D0D0D]/80 text-white shadow-xl" aria-label="上一個產品" onClick={() => moveProject(-1)}>
                                 <ChevronLeft aria-hidden="true" />
                             </button>
-                            <button type="button" className="product-showcase-control product-showcase-control--next absolute right-2 top-1/2 z-[5] grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-blue-200/35 bg-slate-950/80 text-white shadow-xl" aria-label="下一個產品" onClick={() => moveProject(1)}>
+                            <button type="button" className="product-showcase-control product-showcase-control--next absolute right-2 top-1/2 z-[5] grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-blue-200/35 bg-[#0D0D0D]/80 text-white shadow-xl" aria-label="下一個產品" onClick={() => moveProject(1)}>
                                 <ChevronRight aria-hidden="true" />
                             </button>
                         </div>
@@ -340,7 +337,7 @@ const Home = () => {
             </div>
 
             {/* Features Section */}
-            <section className="py-20 bg-slate-800/50">
+            <section className="py-20 bg-[#2C2C2C]/50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
@@ -365,7 +362,7 @@ const Home = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
                                 viewport={{ once: true }}
-                                className="group p-6 bg-slate-700/50 rounded-xl hover:bg-slate-700 transition-all duration-300 hover:transform hover:scale-105 border border-transparent hover:border-blue-500/30"
+                                className="group p-6 bg-[#434445]/50 rounded-xl hover:bg-slate-700 transition-all duration-300 hover:transform hover:scale-105 border border-transparent hover:border-blue-500/30"
                                 whileHover={{ y: -5 }}
                             >
                                 <div className="text-blue-400 mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -391,7 +388,7 @@ const Home = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="relative p-12 bg-gradient-to-r from-blue-600 to-purple-700 rounded-3xl text-center overflow-hidden"
+                        className="relative p-12 bg-gradient-to-r from-[#2C63C7] to-[#7389A8] rounded-3xl text-center overflow-hidden"
                     >
                         <div className="absolute inset-0 bg-black/20"></div>
                         <div className="relative z-10">
@@ -418,7 +415,7 @@ const Home = () => {
             <AnimatePresence>
                 {selectedProject && (
                     <motion.div
-                        className="fixed inset-0 z-[80] flex items-center justify-center bg-slate-950/80 p-4 backdrop-blur-md"
+                        className="fixed inset-0 z-[80] flex items-center justify-center bg-[#0D0D0D]/80 p-4 backdrop-blur-md"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -428,7 +425,7 @@ const Home = () => {
                             role="dialog"
                             aria-modal="true"
                             aria-labelledby="showcase-dialog-title"
-                            className="relative grid max-h-[90svh] w-full max-w-3xl overflow-y-auto rounded-3xl border border-slate-600/60 bg-slate-900 shadow-2xl md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]"
+                            className="relative grid max-h-[90svh] w-full max-w-3xl overflow-y-auto rounded-3xl border border-slate-600/60 bg-[#1C1C1C] shadow-2xl md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]"
                             initial={reduceMotion ? false : { opacity: 0, y: 24, scale: 0.96 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 18, scale: 0.97 }}
@@ -437,13 +434,13 @@ const Home = () => {
                         >
                             <button
                                 type="button"
-                                className="absolute right-3 top-3 z-10 grid h-11 w-11 place-items-center rounded-full border border-white/20 bg-slate-950/75 text-white transition-colors hover:bg-slate-800"
+                                className="absolute right-3 top-3 z-10 grid h-11 w-11 place-items-center rounded-full border border-white/20 bg-[#0D0D0D]/75 text-white transition-colors hover:bg-[#2C2C2C]"
                                 aria-label="關閉產品介紹"
                                 onClick={() => setSelectedProject(null)}
                             >
                                 <X aria-hidden="true" />
                             </button>
-                            <div className="min-h-64 overflow-hidden bg-slate-950 md:min-h-full">
+                            <div className="min-h-64 overflow-hidden bg-[#0D0D0D] md:min-h-full">
                                 <img
                                     src={`${import.meta.env.BASE_URL}${selectedProject.image}`}
                                     alt={selectedProject.title}

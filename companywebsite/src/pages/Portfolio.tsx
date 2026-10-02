@@ -102,7 +102,7 @@ const Portfolio = () => {
     return (
         <div className="pt-20">
             {/* Hero Section */}
-            <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+            <section className="py-20 bg-gradient-to-br from-[#1C1C1C] via-[#2C2C2C] to-[#1C1C1C]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
@@ -112,7 +112,7 @@ const Portfolio = () => {
                     >
                         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                             我們的
-                            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-blue-400 to-[#86BBC6] bg-clip-text text-transparent">
                                 產品
                             </span>
                         </h1>
@@ -124,7 +124,7 @@ const Portfolio = () => {
             </section>
 
             {/* Filter Buttons */}
-            <section className="py-12 bg-slate-800/50">
+            <section className="py-12 bg-[#2C2C2C]/50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -137,7 +137,7 @@ const Portfolio = () => {
                                 key={category.id}
                                 onClick={() => setActiveFilter(category.id)}
                                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeFilter === category.id
-                                    ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white'
+                                    ? 'bg-gradient-to-r from-blue-500 to-[#86BBC6] text-white'
                                     : 'bg-slate-700 text-gray-300 hover:bg-slate-600'
                                     }`}
                             >
@@ -158,7 +158,7 @@ const Portfolio = () => {
                                 initial={{ opacity: 0, y: 50 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="group bg-slate-800/50 rounded-2xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+                                className="group bg-[#2C2C2C]/50 rounded-2xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
                             >
                                 <Link onClick={handleRelatedProjectClick} to={`/portfolio/${project.id}`} className="block">
                                     <div className="relative overflow-hidden">
@@ -167,7 +167,7 @@ const Portfolio = () => {
                                             alt={project.title}
                                             className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C1C]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                     {/*    <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">*/}
                                     {/*        */}{/*<div*/}
                                     {/*        */}{/*    onClick={(e) => {*/}
@@ -216,14 +216,14 @@ const Portfolio = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="py-20 bg-slate-800/50">
+            <section className="py-20 bg-[#2C2C2C]/50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="text-center bg-gradient-to-r from-blue-600 to-purple-700 rounded-3xl p-12"
+                        className="text-center bg-gradient-to-r from-blue-600 to-[#7389A8] rounded-3xl p-12"
                     >
                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                             有想法想要實現嗎？

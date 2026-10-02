@@ -113,7 +113,7 @@ const Services = () => {
     return (
         <div className="pt-20">
             {/* Hero Section */}
-            <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+            <section className="py-20 bg-gradient-to-br from-[#1C1C1C] via-[#2C2C2C] to-[#1C1C1C]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
@@ -123,7 +123,7 @@ const Services = () => {
                     >
                         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                             我們的
-                            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-blue-400 to-[#86BBC6] bg-clip-text text-transparent">
                                 服務項目
                             </span>
                         </h1>
@@ -145,7 +145,7 @@ const Services = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
                                 viewport={{ once: true }}
-                                className="group p-8 bg-slate-800/50 rounded-2xl hover:bg-slate-700/50 transition-all duration-300 hover:transform hover:scale-105"
+                                className="group p-8 bg-[#2C2C2C]/50 rounded-2xl hover:bg-slate-700/50 transition-all duration-300 hover:transform hover:scale-105"
                             >
                                 <div className="text-blue-400 mb-6 group-hover:scale-110 transition-transform duration-300">
                                     {service.icon}
@@ -174,7 +174,7 @@ const Services = () => {
             </section>
 
             {/* Process */}
-            <section className="py-20 bg-slate-800/50">
+            <section className="py-20 bg-[#2C2C2C]/50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
@@ -201,7 +201,7 @@ const Services = () => {
                                 viewport={{ once: true }}
                                 className="text-center relative"
                             >
-                                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-[#86BBC6] rounded-full flex items-center justify-center mx-auto mb-4">
                                     <span className="text-white font-bold text-lg">{step.step}</span>
                                 </div>
                                 <h3 className="text-lg font-semibold text-white mb-3">
@@ -211,7 +211,7 @@ const Services = () => {
                                     {step.description}
                                 </p>
                                 {index < process.length - 1 && (
-                                    <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 transform -translate-x-1/2"></div>
+                                    <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-blue-500 to-[#86BBC6] transform -translate-x-1/2"></div>
                                 )}
                             </motion.div>
                         ))}
@@ -260,14 +260,14 @@ const Services = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="py-20 bg-slate-800/50">
+            <section className="py-20 bg-[#2C2C2C]/50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="text-center bg-gradient-to-r from-blue-600 to-purple-700 rounded-3xl p-12"
+                        className="text-center bg-gradient-to-r from-blue-600 to-[#7389A8] rounded-3xl p-12"
                     >
                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                             準備開始您的專案了嗎？

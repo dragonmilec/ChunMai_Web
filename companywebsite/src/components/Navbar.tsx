@@ -36,7 +36,7 @@ const Navbar = () => {
         <motion.nav
             initial={{ y: -100 }}
             animate={{ y: 0 }}
-            className={`fixed inset-x-0 z-50 transition-all duration-300 ${scrolled ? 'bg-slate-900/95 backdrop-blur-md shadow-xl' : 'bg-transparent'
+            className={`fixed inset-x-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#1C1C1C]/95 backdrop-blur-md shadow-xl' : 'bg-transparent'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,7 +53,7 @@ const Navbar = () => {
                         </div>
 
                         {/* Logo 文字 */}
-                        <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-[#FFFFFF] bg-clip-text text-transparent">
                             醇邁
                         </span>
                     </Link>
@@ -76,7 +76,7 @@ const Navbar = () => {
                                     }
                                 >
                                     {item.name}
-                                    <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transform transition-transform duration-200 ${location.pathname === item.path ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                                    <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-[#86BBC6] transform transition-transform duration-200 ${location.pathname === item.path ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                                         }`} />
                                 </Link>
                             ))}
@@ -102,7 +102,7 @@ const Navbar = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="lg:hidden bg-slate-800/95 backdrop-blur-md"
+                        className="lg:hidden bg-[#2C2C2C]/95 backdrop-blur-md"
                     >
                         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                             {navItems.map((item) => (

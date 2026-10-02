@@ -25,7 +25,7 @@ function App() {
     return (
         <BrowserRouter basename={import.meta.env.BASE_URL}>
             <ScrollToTop />
-            <div className="min-h-screen overflow-x-hidden bg-slate-900 text-white">
+            <div className="min-h-screen overflow-x-hidden bg-[#1C1C1C] text-white">
                 <Navbar />
                 <main>
                     <Routes>
@@ -43,7 +43,7 @@ function App() {
                     toastOptions={{
                         duration: 4000,
                         style: {
-                            background: '#1e293b',
+                            background: '#2C2C2C',
                             color: '#f1f5f9',
                             border: '1px solid #334155'
                         }

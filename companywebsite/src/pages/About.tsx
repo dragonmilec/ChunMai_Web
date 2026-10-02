@@ -53,7 +53,7 @@ const About = () => {
     return (
         <div className="pt-20">
             {/* Hero Section */}
-            <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+            <section className="py-20 bg-gradient-to-br from-[#1C1C1C] via-[#2C2C2C] to-[#1C1C1C]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
@@ -63,7 +63,7 @@ const About = () => {
                     >
                         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                             關於
-                            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-blue-400 to-[#86BBC6] bg-clip-text text-transparent">
                                 醇邁
                             </span>
                         </h1>
@@ -101,7 +101,7 @@ const About = () => {
                             viewport={{ once: true }}
                             className="relative"
                         >
-                            <div className="aspect-video bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl p-8 flex items-center justify-center">
+                            <div className="aspect-video bg-gradient-to-br from-blue-500/20 to-[#86BBC6]/100 rounded-2xl p-8 flex items-center justify-center">
                                 <Code2 className="h-32 w-32 text-blue-400" />
                             </div>
                         </motion.div>
@@ -158,7 +158,7 @@ const About = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: index * 0.2 }}
                                 viewport={{ once: true }}
-                                className="text-center p-8 bg-slate-800/50 rounded-2xl hover:bg-slate-700/50 transition-colors"
+                                className="text-center p-8 bg-[#2C2C2C]/50 rounded-2xl hover:bg-slate-700/50 transition-colors"
                             >
                                 <div className="text-blue-400 mb-4 flex justify-center">
                                     {value.icon}
@@ -176,7 +176,7 @@ const About = () => {
             </section>
 
             {/* Team */}
-            <section className="py-20 bg-slate-800/50">
+            <section className="py-20 bg-[#2C2C2C]/50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}

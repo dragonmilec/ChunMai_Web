@@ -151,7 +151,7 @@ const ProjectDetail = () => {
     const OralHealthAppDetails = () => (
         <>
             {/* 相機拍攝與上傳功能介紹 */}
-            <section className="py-16 bg-slate-800/30">
+            <section className="py-16 bg-[#2C2C2C]/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -201,7 +201,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                         >
                             <div className="flex items-center space-x-3 mb-4">
                                 <Camera className="h-6 w-6 text-blue-400" />
@@ -217,7 +217,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                         >
                             <div className="flex items-center space-x-3 mb-4">
                                 <TrendingUp className="h-6 w-6 text-blue-400" />
@@ -254,7 +254,7 @@ const ProjectDetail = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.6 }}
                                 viewport={{ once: true }}
-                                className="bg-slate-800/50 rounded-2xl p-8"
+                                className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                             >
                                 <h3 className="text-xl font-semibold text-white mb-4">完整的資料記錄</h3>
                                 <p className="text-gray-300 leading-relaxed">
@@ -267,7 +267,7 @@ const ProjectDetail = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.6, delay: 0.1 }}
                                 viewport={{ once: true }}
-                                className="bg-slate-800/50 rounded-2xl p-8"
+                                className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                             >
                                 <h3 className="text-xl font-semibold text-white mb-4">直觀的操作功能</h3>
                                 <p className="text-gray-300 leading-relaxed">
@@ -280,7 +280,7 @@ const ProjectDetail = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.6, delay: 0.2 }}
                                 viewport={{ once: true }}
-                                className="bg-slate-800/50 rounded-2xl p-8"
+                                className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                             >
                                 <h3 className="text-xl font-semibold text-white mb-4">詳細的明細視窗</h3>
                                 <p className="text-gray-300 leading-relaxed">
@@ -301,7 +301,7 @@ const ProjectDetail = () => {
             </section>
 
             {/* 牙菌斑精準分析 */}
-            <section className="py-16 bg-slate-800/30">
+            <section className="py-16 bg-[#2C2C2C]/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -332,7 +332,7 @@ const ProjectDetail = () => {
                                 alt="牙菌斑分析圖"
                                 className="w-full h-48 object-cover rounded-xl mb-6"
                             />
-                            <div className="bg-slate-800/50 rounded-2xl p-6">
+                            <div className="bg-[#2C2C2C]/50 rounded-2xl p-6">
                                 <h3 className="text-xl font-semibold text-white mb-4">AI 智能識別</h3>
                                 <p className="text-gray-300">自動識別牙菌斑位置與覆蓋範圍</p>
                             </div>
@@ -350,7 +350,7 @@ const ProjectDetail = () => {
                                 alt="分析結果展示"
                                 className="w-full h-48 object-cover rounded-xl mb-6"
                             />
-                            <div className="bg-slate-800/50 rounded-2xl p-6">
+                            <div className="bg-[#2C2C2C]/50 rounded-2xl p-6">
                                 <h3 className="text-xl font-semibold text-white mb-4">精準量化</h3>
                                 <p className="text-gray-300">提供精確的覆蓋率數據與健康評估</p>
                             </div>
@@ -367,7 +367,7 @@ const ProjectDetail = () => {
                                 src={`${import.meta.env.BASE_URL}images/t03.png`} alt="醫療決策支援"
                                 className="w-full h-48 object-cover rounded-xl mb-6"
                             />
-                            <div className="bg-slate-800/50 rounded-2xl p-6">
+                            <div className="bg-[#2C2C2C]/50 rounded-2xl p-6">
                                 <h3 className="text-xl font-semibold text-white mb-4">決策支援</h3>
                                 <p className="text-gray-300">為醫療人員提供專業的診斷依據</p>
                             </div>
@@ -399,7 +399,7 @@ const ProjectDetail = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.6 }}
                                 viewport={{ once: true }}
-                                className="bg-slate-800/50 rounded-2xl p-8"
+                                className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                             >
                                 <div className="flex items-center space-x-3 mb-4">
                                     <BarChart3 className="h-6 w-6 text-blue-400" />
@@ -415,7 +415,7 @@ const ProjectDetail = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.6, delay: 0.1 }}
                                 viewport={{ once: true }}
-                                className="bg-slate-800/50 rounded-2xl p-8"
+                                className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                             >
                                 <div className="flex items-center space-x-3 mb-4">
                                     <TrendingUp className="h-6 w-6 text-blue-400" />
@@ -431,7 +431,7 @@ const ProjectDetail = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.6, delay: 0.2 }}
                                 viewport={{ once: true }}
-                                className="bg-slate-800/50 rounded-2xl p-8"
+                                className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                             >
                                 <div className="flex items-center space-x-3 mb-4">
                                     <Search className="h-6 w-6 text-blue-400" />
@@ -456,7 +456,7 @@ const ProjectDetail = () => {
             </section>
 
             {/* 優勢介紹 */}
-            <section className="py-16 bg-slate-800/30">
+            <section className="py-16 bg-[#2C2C2C]/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -477,7 +477,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8 text-center"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8 text-center"
                         >
                             <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
                                 <Database className="h-8 w-8 text-blue-400" />
@@ -493,7 +493,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8 text-center"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8 text-center"
                         >
                             <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
                                 <Settings className="h-8 w-8 text-blue-400" />
@@ -509,7 +509,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8 text-center"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8 text-center"
                         >
                             <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
                                 <Lock className="h-8 w-8 text-blue-400" />
@@ -555,7 +555,7 @@ const ProjectDetail = () => {
                                 alt="單位管理介面"
                                 className="w-full h-64 object-cover rounded-2xl"
                             />
-                            <div className="bg-slate-800/50 rounded-2xl p-8">
+                            <div className="bg-[#2C2C2C]/50 rounded-2xl p-8">
                                 <h3 className="text-2xl font-bold text-white mb-4">單位資料庫管理</h3>
                                 <div className="space-y-3">
                                     <div className="flex items-center space-x-3">
@@ -586,7 +586,7 @@ const ProjectDetail = () => {
                                 alt="帳號管理介面"
                                 className="w-full h-64 object-cover rounded-2xl"
                             />
-                            <div className="bg-slate-800/50 rounded-2xl p-8">
+                            <div className="bg-[#2C2C2C]/50 rounded-2xl p-8">
                                 <h3 className="text-2xl font-bold text-white mb-4">帳號資料庫管理</h3>
                                 <div className="space-y-3">
                                     <div className="flex items-center space-x-3">
@@ -614,7 +614,7 @@ const ProjectDetail = () => {
     const TongueTrainerGameDetails = () => (
         <>
             {/* 產品主視覺 */}
-            <section className="py-16 bg-slate-800/30">
+            <section className="py-16 bg-[#2C2C2C]/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -646,7 +646,7 @@ const ProjectDetail = () => {
             </section>
 
             {/* 核心功能總覽 */}
-            <section className="py-16 bg-slate-800/30">
+            <section className="py-16 bg-[#2C2C2C]/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -696,7 +696,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                         >
                             <div className="flex items-center space-x-3 mb-4">
                                 <Camera className="h-6 w-6 text-blue-400" />
@@ -712,7 +712,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                         >
                             <div className="flex items-center space-x-3 mb-4">
                                 <TrendingUp className="h-6 w-6 text-blue-400" />
@@ -759,7 +759,7 @@ const ProjectDetail = () => {
                                 className="w-full h-96 object-cover rounded-2xl"
                                 style={{ objectPosition: '50% 40%' }}
                             />
-                            <div className="bg-slate-800/50 rounded-2xl p-8">
+                            <div className="bg-[#2C2C2C]/50 rounded-2xl p-8">
                                 <h3 className="text-2xl font-bold text-white mb-4">智能數據分析</h3>
                                 <div className="space-y-3">
                                     <div className="flex items-center space-x-3">
@@ -790,7 +790,7 @@ const ProjectDetail = () => {
                                 alt="圖表"
                                 className="w-full h-96 object-cover rounded-2xl"
                             />
-                            <div className="bg-slate-800/50 rounded-2xl p-8">
+                            <div className="bg-[#2C2C2C]/50 rounded-2xl p-8">
                                 <h3 className="text-2xl font-bold text-white mb-4">後台管理</h3>
                                 <div className="space-y-3">
                                     <div className="flex items-center space-x-3">
@@ -813,7 +813,7 @@ const ProjectDetail = () => {
             </section>
 
             {/* 教學與使用輔助 */}
-            <section className="py-16 bg-slate-800/30">
+            <section className="py-16 bg-[#2C2C2C]/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -844,7 +844,7 @@ const ProjectDetail = () => {
                                 alt="示範教學"
                                 className="w-full h-[390px] object-cover rounded-xl mb-6"
                             />
-                            <div className="bg-slate-800/50 rounded-2xl p-6">
+                            <div className="bg-[#2C2C2C]/50 rounded-2xl p-6">
                                 <h3 className="text-xl font-semibold text-white mb-4">示範教學</h3>
                                 <p className="text-gray-300">提供完整的操作流程與示範，幫助使用者快速上手</p>
                             </div>
@@ -862,7 +862,7 @@ const ProjectDetail = () => {
                                 alt="互動提示"
                                 className="w-full h-[390px] object-cover rounded-xl mb-6"
                             />
-                            <div className="bg-slate-800/50 rounded-2xl p-6">
+                            <div className="bg-[#2C2C2C]/50 rounded-2xl p-6">
                                 <h3 className="text-xl font-semibold text-white mb-4">互動提示</h3>
                                 <p className="text-gray-300">在遊戲或訓練過程中，提供提示與建議，確保動作正確</p>
                             </div>
@@ -879,7 +879,7 @@ const ProjectDetail = () => {
                                 src={`${import.meta.env.BASE_URL}images/o07.png`} alt="任務難易度調整"
                                 className="w-full h-[390px] object-cover rounded-xl mb-6"
                             />
-                            <div className="bg-slate-800/50 rounded-2xl p-6">
+                            <div className="bg-[#2C2C2C]/50 rounded-2xl p-6">
                                 <h3 className="text-xl font-semibold text-white mb-4">任務難易度調整</h3>
                                 <p className="text-gray-300">根據使用者能力，可調整訓練難度，讓訓練更有成效。</p>
                             </div>
@@ -895,7 +895,7 @@ const ProjectDetail = () => {
         <>
 
             {/* 技術核心 */}
-            <section className="py-16 bg-slate-800/30">
+            <section className="py-16 bg-[#2C2C2C]/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -929,7 +929,7 @@ const ProjectDetail = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.6 }}
                                 viewport={{ once: true }}
-                                className="bg-slate-800/50 rounded-2xl p-8"
+                                className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                             >
                                 <div className="flex items-center space-x-3 mb-4">
                                     <Globe2 className="h-6 w-6 text-blue-400" />
@@ -945,7 +945,7 @@ const ProjectDetail = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.6, delay: 0.1 }}
                                 viewport={{ once: true }}
-                                className="bg-slate-800/50 rounded-2xl p-8"
+                                className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                             >
                                 <div className="flex items-center space-x-3 mb-4">
                                     <MessageCircle className="h-6 w-6 text-blue-400" />
@@ -961,7 +961,7 @@ const ProjectDetail = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.6, delay: 0.2 }}
                                 viewport={{ once: true }}
-                                className="bg-slate-800/50 rounded-2xl p-8"
+                                className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                             >
                                 <div className="flex items-center space-x-3 mb-4">
                                     <Target className="h-6 w-6 text-blue-400" />
@@ -1016,7 +1016,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                         >
                             <div className="flex items-center space-x-3 mb-4">
                                 <Mic className="h-6 w-6 text-blue-400" />
@@ -1030,7 +1030,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                         >
                             <div className="flex items-center space-x-3 mb-4">
                                 <Gamepad2 className="h-6 w-6 text-blue-400" />
@@ -1044,7 +1044,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                         >
                             <div className="flex items-center space-x-3 mb-4">
                                 <BookOpen className="h-6 w-6 text-blue-400" />
@@ -1058,7 +1058,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, delay: 0.3 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                         >
                             <div className="flex items-center space-x-3 mb-4">
                                 <MessageCircle className="h-6 w-6 text-blue-400" />
@@ -1127,7 +1127,7 @@ const ProjectDetail = () => {
                         viewport={{ once: true }}
                         className="space-y-6 mt-[40px]" // ← 這裡加上間距
                     >
-                        <div className="bg-slate-800/50 rounded-2xl p-8">
+                        <div className="bg-[#2C2C2C]/50 rounded-2xl p-8">
                             <h3 className="text-2xl font-bold text-white mb-4">智慧雲端校正</h3>
                             <div className="space-y-3">
                                 <div className="flex items-center space-x-3">
@@ -1149,7 +1149,7 @@ const ProjectDetail = () => {
             </section>
 
             {/* 雲端整合功能 */}
-            <section className="py-16 bg-slate-800/30">
+            <section className="py-16 bg-[#2C2C2C]/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -1170,7 +1170,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8 text-center"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8 text-center"
                         >
                             <div className="flex justify-center mb-4">
                                 <TrendingUp className="h-12 w-12 text-blue-400" />
@@ -1184,7 +1184,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8 text-center"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8 text-center"
                         >
                             <div className="flex justify-center mb-4">
                                 <Award className="h-12 w-12 text-blue-400" />
@@ -1198,7 +1198,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8 text-center"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8 text-center"
                         >
                             <div className="flex justify-center mb-4">
                                 <Users className="h-12 w-12 text-blue-400" />
@@ -1212,7 +1212,7 @@ const ProjectDetail = () => {
 
 
             {/* 使用者帳號管理系統 */}
-            <section className="py-16 bg-slate-800/30">
+            <section className="py-16 bg-[#2C2C2C]/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -1248,7 +1248,7 @@ const ProjectDetail = () => {
     const LanguageTherapyDetails = () => (
         <>
             {/* 產品定位 */}
-            <section className="py-16 bg-slate-800/30">
+            <section className="py-16 bg-[#2C2C2C]/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -1317,7 +1317,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                         >
                             <div className="flex items-center space-x-3 mb-4">
                                 <Mic className="h-6 w-6 text-blue-400" />
@@ -1331,7 +1331,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                         >
                             <div className="flex items-center space-x-3 mb-4">
                                 <Gamepad2 className="h-6 w-6 text-blue-400" />
@@ -1345,7 +1345,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                         >
                             <div className="flex items-center space-x-3 mb-4">
                                 <BookOpen className="h-6 w-6 text-blue-400" />
@@ -1359,7 +1359,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, delay: 0.3 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                         >
                             <div className="flex items-center space-x-3 mb-4">
                                 <MessageCircle className="h-6 w-6 text-blue-400" />
@@ -1372,7 +1372,7 @@ const ProjectDetail = () => {
             </section>
 
             {/* AI智能引導與獎勵機制 */}
-            <section className="py-16 bg-slate-800/30">
+            <section className="py-16 bg-[#2C2C2C]/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -1393,7 +1393,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8 text-center"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8 text-center"
                         >
                             <div className="flex justify-center mb-4">
                                 <TrendingUp className="h-12 w-12 text-blue-400" />
@@ -1407,7 +1407,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8 text-center"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8 text-center"
                         >
                             <div className="flex justify-center mb-4">
                                 <Award className="h-12 w-12 text-blue-400" />
@@ -1421,7 +1421,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8 text-center"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8 text-center"
                         >
                             <div className="flex justify-center mb-4">
                                 <Users className="h-12 w-12 text-blue-400" />
@@ -1456,7 +1456,7 @@ const ProjectDetail = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.6 }}
                                 viewport={{ once: true }}
-                                className="bg-slate-800/50 rounded-2xl p-8"
+                                className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                             >
                                 <h3 className="text-xl font-semibold text-white mb-4">即時回饋</h3>
                                 <p className="text-gray-300">AI 能即時分析使用者的語音或操作，並給予肯定、修正或引導，提升學習效率。</p>
@@ -1467,7 +1467,7 @@ const ProjectDetail = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.6, delay: 0.1 }}
                                 viewport={{ once: true }}
-                                className="bg-slate-800/50 rounded-2xl p-8"
+                                className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                             >
                                 <h3 className="text-xl font-semibold text-white mb-4">理解與糾正</h3>
                                 <p className="text-gray-300">針對使用者的語音回答進行辨識與分析，判斷是否清楚、正確，並透過語音或文字引導修正。</p>
@@ -1478,7 +1478,7 @@ const ProjectDetail = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.6, delay: 0.2 }}
                                 viewport={{ once: true }}
-                                className="bg-slate-800/50 rounded-2xl p-8"
+                                className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                             >
                                 <h3 className="text-xl font-semibold text-white mb-4">自然語言互動</h3>
                                 <p className="text-gray-300">使用者可以直接用語音與 AI 對話，讓學習過程更自然，貼近實際溝通情境。</p>
@@ -1502,7 +1502,7 @@ const ProjectDetail = () => {
             </section>
 
             {/* 沉浸式互動世界 */}
-            <section className="py-16 bg-slate-800/30">
+            <section className="py-16 bg-[#2C2C2C]/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -1536,7 +1536,7 @@ const ProjectDetail = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.6 }}
                                 viewport={{ once: true }}
-                                className="bg-slate-800/50 rounded-2xl p-8"
+                                className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                             >
                                 <div className="flex items-center space-x-3 mb-4">
                                     <Globe2 className="h-6 w-6 text-blue-400" />
@@ -1552,7 +1552,7 @@ const ProjectDetail = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.6, delay: 0.1 }}
                                 viewport={{ once: true }}
-                                className="bg-slate-800/50 rounded-2xl p-8"
+                                className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                             >
                                 <div className="flex items-center space-x-3 mb-4">
                                     <MessageCircle className="h-6 w-6 text-blue-400" />
@@ -1568,7 +1568,7 @@ const ProjectDetail = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.6, delay: 0.2 }}
                                 viewport={{ once: true }}
-                                className="bg-slate-800/50 rounded-2xl p-8"
+                                className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                             >
                                 <div className="flex items-center space-x-3 mb-4">
                                     <Target className="h-6 w-6 text-blue-400" />
@@ -1584,7 +1584,7 @@ const ProjectDetail = () => {
             </section>
 
             {/* 成長追蹤與語言能力分析 */}
-            <section className="py-16 bg-slate-800/30">
+            <section className="py-16 bg-[#2C2C2C]/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -1612,7 +1612,7 @@ const ProjectDetail = () => {
                                 alt="語音與詞彙記錄"
                                 className="w-full h-48 object-cover rounded-xl mb-6"
                             />
-                            <div className="bg-slate-800/50 rounded-2xl p-6">
+                            <div className="bg-[#2C2C2C]/50 rounded-2xl p-6">
                                 <h3 className="text-xl font-semibold text-white mb-4">語音與詞彙紀錄</h3>
                                 <p className="text-gray-300">每筆練習都有記錄，AI 分析回答類型與準確度</p>
                             </div>
@@ -1630,7 +1630,7 @@ const ProjectDetail = () => {
                                 alt="成長曲線分析"
                                 className="w-full h-48 object-cover rounded-xl mb-6"
                             />
-                            <div className="bg-slate-800/50 rounded-2xl p-6">
+                            <div className="bg-[#2C2C2C]/50 rounded-2xl p-6">
                                 <h3 className="text-xl font-semibold text-white mb-4">成長曲線</h3>
                                 <p className="text-gray-300">可視化追蹤詞彙量、正確率與表現趨勢</p>
                             </div>
@@ -1648,7 +1648,7 @@ const ProjectDetail = () => {
                                 alt="線上複評系統"
                                 className="w-full h-48 object-cover rounded-xl mb-6"
                             />
-                            <div className="bg-slate-800/50 rounded-2xl p-6">
+                            <div className="bg-[#2C2C2C]/50 rounded-2xl p-6">
                                 <h3 className="text-xl font-semibold text-white mb-4">線上複評</h3>
                                 <p className="text-gray-300">提供語言治療師後台審閱並調整課程建議</p>
                             </div>
@@ -1659,7 +1659,7 @@ const ProjectDetail = () => {
 
 
             {/* 學習保護與情緒維持 */}
-            <section className="py-16 bg-slate-800/30">
+            <section className="py-16 bg-[#2C2C2C]/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -1680,7 +1680,7 @@ const ProjectDetail = () => {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.6 }}
                                     viewport={{ once: true }}
-                                    className="bg-slate-800/50 rounded-xl p-6"
+                                    className="bg-[#2C2C2C]/50 rounded-xl p-6"
                                 >
                                     <div className="flex items-center space-x-3 mb-3">
                                         <Clock className="h-5 w-5 text-blue-400" />
@@ -1694,7 +1694,7 @@ const ProjectDetail = () => {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.6, delay: 0.1 }}
                                     viewport={{ once: true }}
-                                    className="bg-slate-800/50 rounded-xl p-6"
+                                    className="bg-[#2C2C2C]/50 rounded-xl p-6"
                                 >
                                     <div className="flex items-center space-x-3 mb-3">
                                         <RefreshCw className="h-5 w-5 text-blue-400" />
@@ -1708,7 +1708,7 @@ const ProjectDetail = () => {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.6, delay: 0.2 }}
                                     viewport={{ once: true }}
-                                    className="bg-slate-800/50 rounded-xl p-6"
+                                    className="bg-[#2C2C2C]/50 rounded-xl p-6"
                                 >
                                     <div className="flex items-center space-x-3 mb-3">
                                         <Eye className="h-5 w-5 text-blue-400" />
@@ -1752,7 +1752,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8 text-center"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8 text-center"
                         >
                             <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
                                 <Users className="h-8 w-8 text-blue-400" />
@@ -1766,7 +1766,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8 text-center"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8 text-center"
                         >
                             <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
                                 <BookOpen className="h-8 w-8 text-blue-400" />
@@ -1780,7 +1780,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8 text-center"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8 text-center"
                         >
                             <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
                                 <Brain className="h-8 w-8 text-blue-400" />
@@ -1793,7 +1793,7 @@ const ProjectDetail = () => {
             </section>
 
             {/* 效益分析 */}
-            <section className="py-16 bg-slate-800/30">
+            <section className="py-16 bg-[#2C2C2C]/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -1811,7 +1811,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                         >
                             <h3 className="text-2xl font-bold text-white mb-6">機構與師資</h3>
                             <div className="space-y-4">
@@ -1835,7 +1835,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                         >
                             <h3 className="text-2xl font-bold text-white mb-6">家長與孩子</h3>
                             <div className="space-y-4">
@@ -1859,7 +1859,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                         >
                             <h3 className="text-2xl font-bold text-white mb-6">系統管理方</h3>
                             <div className="space-y-4">
@@ -1896,7 +1896,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                         >
                             <h3 className="text-2xl font-bold text-white mb-8">試驗設計</h3>
 
@@ -1952,7 +1952,7 @@ const ProjectDetail = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
-                            className="bg-slate-800/50 rounded-2xl p-8"
+                            className="bg-[#2C2C2C]/50 rounded-2xl p-8"
                         >
                             <h3 className="text-2xl font-bold text-white mb-8">試驗結果</h3>
 
@@ -2001,7 +2001,7 @@ const ProjectDetail = () => {
     return (
         <div className="pt-16">
             {/* Header */}
-            <section className="py-12 bg-slate-800/50">
+            <section className="py-12 bg-[#2C2C2C]/50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
@@ -2054,7 +2054,7 @@ const ProjectDetail = () => {
                         </div>
 
                         {/* Project Info */}
-                        <div className="bg-slate-800/50 rounded-2xl p-8">
+                        <div className="bg-[#2C2C2C]/50 rounded-2xl p-8">
                             <h2 className="text-2xl font-bold text-white mb-6">專案資訊</h2>
 
                             <div className="space-y-6">
@@ -2128,7 +2128,7 @@ const ProjectDetail = () => {
                             : (
                                 <>
                                     {/* Project Description */}
-                                    <section className="py-12 bg-slate-800/30">
+                                    <section className="py-12 bg-[#2C2C2C]/30">
                                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                                             <motion.div
                                                 initial={{ opacity: 0, y: 30 }}
@@ -2154,7 +2154,7 @@ const ProjectDetail = () => {
                                                                 whileInView={{ opacity: 1, x: 0 }}
                                                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                                                 viewport={{ once: true }}
-                                                                className="flex items-center space-x-3 p-3 bg-slate-800/50 rounded-xl"
+                                                                className="flex items-center space-x-3 p-3 bg-[#2C2C2C]/50 rounded-xl"
                                                             >
                                                                 <div className="w-2 h-2 bg-blue-400 rounded-full flex-shrink-0" />
                                                                 <span className="text-gray-300">{feature}</span>
@@ -2197,7 +2197,7 @@ const ProjectDetail = () => {
                                     <Link
                                         to={`/portfolio/${relatedProject.id}`}
                                         onClick={handleRelatedProjectClick}
-                                        className="group block bg-slate-800/50 rounded-2xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+                                        className="group block bg-[#2C2C2C]/50 rounded-2xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
                                     >
                                         <img
                                             src={`${import.meta.env.BASE_URL}${relatedProject.images[0]}`}
