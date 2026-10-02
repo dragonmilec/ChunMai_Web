@@ -213,7 +213,7 @@ const Home = () => {
                             className="text-center mb-16"
                         >
                                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                                    精選產品展示
+                                    產品展示
                                 </h2>
                                 <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                                     探索我們為客戶打造的創新解決方案
@@ -347,7 +347,7 @@ const Home = () => {
                         className="text-center mb-16"
                     >
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                            為什麼選擇我們
+                            讓技術真正創造價值
                         </h2>
                         <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                             我們結合創新思維與專業技術，為每位客戶量身打造最佳的軟體解決方案
