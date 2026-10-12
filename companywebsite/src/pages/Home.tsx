@@ -187,11 +187,6 @@ const Home = () => {
                         <InteractiveSphere />
                     </div>
                 </div>
-                <div className="sphere-hero__scroll" aria-hidden="true">
-                    <div className="w-5 h-8 border border-gray-600 rounded-full flex justify-center">
-                        <div className="w-1 h-2 bg-gray-400 rounded-full mt-2 animate-bounce" />
-                    </div>
-                </div>
             </section>
 
             {/* 產品展示區塊 */}

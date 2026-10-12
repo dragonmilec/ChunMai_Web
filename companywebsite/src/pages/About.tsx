@@ -2,6 +2,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Users, Target, Award, Heart, Code2, Lightbulb, Shield } from 'lucide-react'
+import DotWaveBackground from '../components/DotWaveBackground'
 
 const About = () => {
     const values = [
@@ -53,7 +54,8 @@ const About = () => {
     return (
         <div className="pt-20">
             {/* Hero Section */}
-            <section className="py-20 bg-gradient-to-br from-[#1C1C1C] via-[#2C2C2C] to-[#1C1C1C]">
+            <section className="dot-wave-hero py-20 bg-gradient-to-br from-[#1C1C1C] via-[#2C2C2C] to-[#1C1C1C]">
+                <DotWaveBackground />
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
