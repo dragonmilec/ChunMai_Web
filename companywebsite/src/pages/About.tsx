@@ -1,8 +1,9 @@
 ﻿
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Users, Target, Award, Heart, Code2, Lightbulb, Shield } from 'lucide-react'
+import { Users, Target, Award, Heart, Lightbulb, Shield } from 'lucide-react'
 import DotWaveBackground from '../components/DotWaveBackground'
+import companyStoryImage from '../assets/op_01.jpg'
 
 const About = () => {
     const values = [
@@ -101,11 +102,12 @@ const About = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
-                            className="relative"
+                            className="relative aspect-video overflow-hidden rounded-2xl"
                         >
-                            <div className="aspect-video bg-gradient-to-br from-blue-500/20 to-[#86BBC6]/100 rounded-2xl p-8 flex items-center justify-center">
-                                <Code2 className="h-32 w-32 text-blue-400" />
-                            </div>
+                            <img
+                                src={companyStoryImage}
+                                className="absolute inset-0 h-full w-full object-cover"
+                            />
                         </motion.div>
                     </div>
                 </div>

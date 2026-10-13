@@ -1,4 +1,7 @@
 # Logs
+.reference/
+.sites-runtime/
+.sites-source/
 logs
 *.log
 npm-debug.log*

@@ -1,18 +1,28 @@
 {
-  "name": "vite-react-ts-template",
+  "name": "chunmai-website",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "packageManager": "npm@10.9.0",
   "scripts": {
+    "install:ci": "npm install --no-audit --no-fund",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vue-tsc --noEmit -p tsconfig.app.json && vite build",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.app.json",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "postbuild": "copy dist\\index.html dist\\404.html",
+    "postbuild": "node scripts/postbuild.mjs",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
+    "vue": "^3.5.0",
+    "vue-router": "^4.5.0",
+    "@vueuse/core": "^13.0.0",
+    "gsap": "^3.13.0",
+    "lenis": "^1.3.0",
+    "motion-v": "^1.7.0",
+    "lucide-vue-next": "^0.540.0",
     "framer-motion": "12.23.11",
     "lucide-react": "0.540.0",
     "react": "18.3.1",
@@ -21,6 +31,8 @@
     "react-router-dom": "6.26.0"
   },
   "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.0",
+    "vue-tsc": "^2.2.0",
     "@eslint/js": "9.9.1",
     "@types/react": "18.3.5",
     "@types/react-dom": "18.3.0",
