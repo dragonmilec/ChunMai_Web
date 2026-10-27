@@ -36,7 +36,7 @@ const active = (path: string) => path === '/' ? route.path === '/' : route.path.
     <div class="shell header-inner">
       <RouterLink to="/" class="brand" aria-label="醇邁，回首頁">
         <img :src="logoUrl" class="brand-logo" alt="" width="80" height="38" />
-        <span class="brand-name">醇邁<span>DRAGON MILE</span></span>
+        <span class="brand-name">醇邁<span>CHUN MILE</span></span>
       </RouterLink>
       <nav class="desktop-nav" aria-label="主要導覽">
         <RouterLink v-for="item in navigation.slice(0, 4)" :key="item.path" :to="item.path" :class="{ active: active(item.path) }" :aria-current="active(item.path) ? 'page' : undefined">{{ item.label }}</RouterLink>
@@ -47,7 +47,7 @@ const active = (path: string) => path === '/' ? route.path === '/' : route.path.
     <Transition name="menu">
       <nav v-if="open" id="mobile-menu" ref="menu" class="mobile-nav" aria-label="行動版導覽" data-lenis-prevent>
         <RouterLink v-for="(item, i) in navigation" :key="item.path" :to="item.path" :aria-current="active(item.path) ? 'page' : undefined"><span class="mono">0{{ i + 1 }}</span>{{ item.label }}<ArrowUpRight :size="24" /></RouterLink>
-        <p class="eyebrow">DRAGON MILE · 專業軟體解決方案</p>
+        <p class="eyebrow">CHUN MILE · 專業軟體解決方案</p>
       </nav>
     </Transition>
   </header>

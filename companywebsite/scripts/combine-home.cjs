@@ -12,7 +12,7 @@ if (start < 0 || end < start) throw new Error('Hero visual not found')
 home = home.slice(0, start) + `        <div class="sphere-hero__visual">
           <div class="sphere-stage-label"><span class="mono">INTERACTIVE EXPLORATION</span><Plus :size="16" :stroke-width="1" /></div>
           <InteractiveSphere />
-          <span class="sphere-coordinate mono">DRAGON MILE / PARTICLE FIELD</span>
+          <span class="sphere-coordinate mono">CHUN MILE / PARTICLE FIELD</span>
           <div class="sphere-interaction-hint"><MousePointer2 :size="14" :stroke-width="1.5" /><span>{{ reduced === 'reduce' ? '粒子球體' : '移動游標，或輕觸探索球體' }}</span></div>
         </div>` + home.slice(end)
 const servicesStart = home.indexOf('    <section id="services-preview"')

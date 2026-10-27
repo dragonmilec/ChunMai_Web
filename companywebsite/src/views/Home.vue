@@ -23,7 +23,7 @@ const toServices = () => document.getElementById('services-preview')?.scrollInto
     <section class="home-hero sphere-hero">
       <div class="shell hero-layout sphere-hero__layout">
         <div class="hero-copy">
-          <motion.div class="eyebrow hero-eyebrow" :initial="reduced === 'reduce' ? false : { opacity: 0, y: 12 }" :animate="{ opacity: 1, y: 0 }" :transition="{ duration: .6 }"><span class="small-line"></span>專業軟體解決方案<span class="hero-edition mono">DRAGON MILE</span></motion.div>
+          <motion.div class="eyebrow hero-eyebrow" :initial="reduced === 'reduce' ? false : { opacity: 0, y: 12 }" :animate="{ opacity: 1, y: 0 }" :transition="{ duration: .6 }"><span class="small-line"></span>專業軟體解決方案<span class="hero-edition mono">CHUN MILE</span></motion.div>
           <motion.h1 :initial="reduced === 'reduce' ? false : { opacity: 0, y: 20 }" :animate="{ opacity: 1, y: 0 }" :transition="{ duration: .8, delay: .08 }">打造<span class="hero-line">卓越數位體驗<span class="title-dot">.</span></span><span class="hero-final">驅動企業成長</span></motion.h1>
           <motion.p class="hero-description" :initial="reduced === 'reduce' ? false : { opacity: 0, y: 16 }" :animate="{ opacity: 1, y: 0 }" :transition="{ duration: .7, delay: .2 }">從網站到企業系統，我們專注於打造實用、可靠的軟體，<br class="desktop-break" />幫助您提升業務效能，實現數位轉型目標。</motion.p>
           <div class="hero-actions"><RouterLink to="/contact" class="button button-primary">立即諮詢<ArrowUpRight :size="18" /></RouterLink><RouterLink to="/portfolio" class="text-link">查看案例<ArrowRight :size="18" /></RouterLink></div>
@@ -32,7 +32,7 @@ const toServices = () => document.getElementById('services-preview')?.scrollInto
         <div class="sphere-hero__visual">
           <div class="sphere-stage-label"><span class="mono">INTERACTIVE EXPLORATION</span><Plus :size="16" :stroke-width="1" /></div>
           <InteractiveSphere />
-          <span class="sphere-coordinate mono">DRAGON MILE / PARTICLE FIELD</span>
+          <span class="sphere-coordinate mono">CHUN MILE / PARTICLE FIELD</span>
           <div class="sphere-interaction-hint"><MousePointer2 :size="14" :stroke-width="1.5" /><span>{{ reduced === 'reduce' ? '粒子球體' : '移動游標，或輕觸探索球體' }}</span></div>
         </div>
       </div>
@@ -57,7 +57,7 @@ const toServices = () => document.getElementById('services-preview')?.scrollInto
       </div>
     </section>
 
-    <section class="section about-preview"><div class="shell about-layout"><div data-reveal><p class="eyebrow"><span class="section-number">03</span>ABOUT DRAGON MILE</p><h2>讓科技回歸簡單，<br />讓使用變得自然<span class="title-dot">.</span></h2><p>我們想打造能真正解決問題的產品。從第一個原型到如今的完整平台，每一步都來自我們對「更好使用體驗」的執著。</p><RouterLink to="/about" class="text-link">認識醇邁<ArrowUpRight :size="18" /></RouterLink></div><div class="feature-grid"><div v-for="(feature, i) in features" :key="feature.title" class="feature-item" data-reveal><component :is="icons[i]" :size="25" :stroke-width="1.4" /><h3>{{ feature.title }}</h3><p>{{ feature.description }}</p></div></div></div></section>
+    <section class="section about-preview"><div class="shell about-layout"><div data-reveal><p class="eyebrow"><span class="section-number">03</span>ABOUT CHUN MILE</p><h2>讓科技回歸簡單，<br />讓使用變得自然<span class="title-dot">.</span></h2><p>我們想打造能真正解決問題的產品。從第一個原型到如今的完整平台，每一步都來自我們對「更好使用體驗」的執著。</p><RouterLink to="/about" class="text-link">認識醇邁<ArrowUpRight :size="18" /></RouterLink></div><div class="feature-grid"><div v-for="(feature, i) in features" :key="feature.title" class="feature-item" data-reveal><component :is="icons[i]" :size="25" :stroke-width="1.4" /><h3>{{ feature.title }}</h3><p>{{ feature.description }}</p></div></div></div></section>
     <ContactCTA />
   </div>
 </template>
