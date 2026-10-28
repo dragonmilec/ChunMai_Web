@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { useDocumentVisibility, useElementHover, useElementVisibility, useFocusWithin, useIntervalFn } from '@vueuse/core'
 import { motion, AnimatePresence } from 'motion-v'
-import { ArrowRight, ArrowUpRight, ArrowDown, ChevronLeft, ChevronRight, Code2, Zap, ShieldCheck, Users, Plus, MousePointer2 } from 'lucide-vue-next'
+import { ArrowRight, ArrowUpRight, ArrowDown, ChevronLeft, ChevronRight, Code2, Zap, ShieldCheck, Users, Plus, Pause, Play } from 'lucide-vue-next'
 import { services, products, features } from '../data/site'
 import { useReveal } from '../composables/useReveal'
 import ProductCard from '../components/ProductCard.vue'
@@ -12,9 +13,21 @@ const root = ref<HTMLElement | null>(null)
 const { reduced } = useReveal(root)
 const icons = [Code2, Zap, ShieldCheck, Users]
 const current = ref(0)
+const featuredSection = ref<HTMLElement | null>(null)
+const playing = ref(true)
+const hovering = useElementHover(featuredSection)
+const { focused } = useFocusWithin(featuredSection)
+const visible = useElementVisibility(featuredSection)
+const documentVisibility = useDocumentVisibility()
 const ordered = [products[3]!, products[1]!, products[0]!, products[2]!]
 const featured = computed(() => [ordered[current.value]!, ordered[(current.value + 1) % ordered.length]!])
-const move = (direction: number) => { current.value = (current.value + direction + ordered.length) % ordered.length }
+const autoplay = computed(() => playing.value && reduced.value !== 'reduce')
+const advance = (direction: number) => { current.value = (current.value + direction + ordered.length) % ordered.length }
+const { resume: resetTimer } = useIntervalFn(() => {
+  if (autoplay.value && visible.value && documentVisibility.value === 'visible' && !hovering.value && !focused.value) advance(1)
+}, 5000)
+const move = (direction: number) => { advance(direction); resetTimer() }
+const togglePlayback = () => { playing.value = !playing.value; resetTimer() }
 const toServices = () => document.getElementById('services-preview')?.scrollIntoView({ behavior: reduced.value === 'reduce' ? 'instant' : 'smooth' })
 </script>
 <template>
@@ -33,18 +46,17 @@ const toServices = () => document.getElementById('services-preview')?.scrollInto
           <div class="sphere-stage-label"><span class="mono">INTERACTIVE EXPLORATION</span><Plus :size="16" :stroke-width="1" /></div>
           <InteractiveSphere />
           <span class="sphere-coordinate mono">CHUN MILE / PARTICLE FIELD</span>
-          <div class="sphere-interaction-hint"><MousePointer2 :size="14" :stroke-width="1.5" /><span>{{ reduced === 'reduce' ? '粒子球體' : '移動游標，或輕觸探索球體' }}</span></div>
         </div>
       </div>
     </section>
     <div class="sphere-readable-region">
       <div class="shell hero-baseline"><span>以技術實現想法，以設計連結使用者。</span><span class="mono">THOUGHTFUL SOLUTIONS. REAL IMPACT.</span><Plus :size="14" /></div>
-    <section class="section featured-section home-content-two" data-sphere-content="2">
+    <section ref="featuredSection" class="section featured-section home-content-two" data-sphere-content="2">
       <div class="shell">
         <div class="section-heading" data-reveal><div><p class="eyebrow"><span class="section-number">01</span>SELECTED PRODUCTS</p><h2>讓想法，成為實際應用<span class="title-dot">.</span></h2></div><RouterLink to="/portfolio" class="text-link">瀏覽所有產品<ArrowUpRight :size="18" /></RouterLink></div>
-        <div class="featured-controls"><span>探索我們為客戶打造的創新解決方案</span><div class="carousel-controls"><span class="mono">0{{ current + 1 }} <span class="muted">/ 04</span></span><button @click="move(-1)" aria-label="上一組產品"><ChevronLeft :size="18" /></button><button @click="move(1)" aria-label="下一組產品"><ChevronRight :size="18" /></button></div></div>
+        <div class="featured-controls"><span>探索我們為客戶打造的創新解決方案</span><div class="carousel-controls"><span class="mono">{{ String(current + 1).padStart(2, '0') }} <span class="muted">/ {{ String(ordered.length).padStart(2, '0') }}</span></span><button v-if="reduced !== 'reduce'" @click="togglePlayback" :aria-label="playing ? '暫停產品輪播' : '播放產品輪播'"><component :is="playing ? Pause : Play" :size="18" /></button><button @click="move(-1)" aria-label="上一組產品"><ChevronLeft :size="18" /></button><button @click="move(1)" aria-label="下一組產品"><ChevronRight :size="18" /></button></div></div>
         <div class="featured-products" aria-roledescription="carousel" aria-label="產品展示"><AnimatePresence mode="wait"><motion.div :key="current" class="product-grid" :initial="reduced === 'reduce' ? false : { opacity: 0, y: 12 }" :animate="{ opacity: 1, y: 0 }" :exit="{ opacity: 0 }" :transition="{ duration: reduced === 'reduce' ? 0 : .25 }"><ProductCard v-for="product in featured" :key="product.id" :product="product" /></motion.div></AnimatePresence></div>
-        <span class="sr-only" aria-live="polite">顯示 {{ featured.map(p => p.title).join('、') }}</span>
+        <span class="sr-only" :aria-live="autoplay && !hovering && !focused ? 'off' : 'polite'">顯示 {{ featured.map(p => p.title).join('、') }}</span>
       </div>
     </section>
     </div>

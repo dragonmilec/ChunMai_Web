@@ -13,7 +13,7 @@ const toggle = ref<HTMLButtonElement | null>(null)
 const { y } = useScroll(window)
 const scrolled = computed(() => y.value > 24)
 const locked = useScrollLock(document.body)
-const desktop = useMediaQuery('(min-width: 701px)')
+const desktop = useMediaQuery('(min-width: 961px)')
 watch(desktop, value => { if (value) open.value = false })
 // Keep focus within the mobile navigation without adding another dependency.
 useEventListener('keydown', (event: KeyboardEvent) => {
